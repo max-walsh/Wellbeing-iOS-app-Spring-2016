@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D59A7FCBFE97F3EABE64A5A037D6200D9C0BED54",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D59A7FCBFE97F3EABE64A5A037D6200D9C0BED54" : 0,
+    "BAF79CA21EC5B6F36AC088054E2774FB2CCA2E1D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "17E60E7A-B407-46F5-A9AC-1170E1734A8D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D59A7FCBFE97F3EABE64A5A037D6200D9C0BED54" : "Wellbeing-iOS-app-Spring2016\/",
+    "BAF79CA21EC5B6F36AC088054E2774FB2CCA2E1D" : "WellnessApp"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WellnessApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WellnessApp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amcmaho4\/Wellbeing-iOS-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BAF79CA21EC5B6F36AC088054E2774FB2CCA2E1D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/mwalsh29\/wellbeing-ios-app-spring2016.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D59A7FCBFE97F3EABE64A5A037D6200D9C0BED54"
+    }
+  ]
+}
