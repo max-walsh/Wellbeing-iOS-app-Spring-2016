@@ -17,7 +17,6 @@ let myUpdateTableKey = "com.amcmaho4.updateKey"
 class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
     var currentSurvey : survey = survey()
     var completed = false
-
     @IBOutlet var nextbutton: UIBarButtonItem!
     
     @IBOutlet var up: UIBarButtonItem!
@@ -26,9 +25,8 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
     var tap:UITapGestureRecognizer = UITapGestureRecognizer()
     
     override func viewDidLoad() {
-        // sorts current survey?
+        // Sorts curent Survey
         currentSurvey.questions.sortInPlace({$0.questionID < $1.questionID})
-        print("It should have sorted the survey by now!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         super.viewDidLoad()
         up.imageInsets.left = self.tableView.frame.width/4
         down.imageInsets.left = 3*self.tableView.frame.width/4
@@ -236,7 +234,6 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         }
         
         if currentSurvey.questions[indexPath.section].answerType == "Button" {
-            print("button")
             let cell = buttonTableViewCell()
             cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
             setTheStateAtIndexPath(indexPath) // selects/ deselects the appropriate cells

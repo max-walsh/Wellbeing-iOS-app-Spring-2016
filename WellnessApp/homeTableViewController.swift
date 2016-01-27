@@ -480,6 +480,11 @@ class homeTableViewController: UITableViewController {
         self.tableView.setNeedsDisplay()
     }
     
+    @IBAction func transferToDRSite(sender: AnyObject) {
+        let drURL = NSURL(string: "http://nd.qualtrics.com/SE/?SID=SV_4SFJmGoj5rpt5u5")
+        UIApplication.sharedApplication().openURL(drURL!)
+
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "surveySelected" {
             let nextView :SurveyTableViewController = segue.destinationViewController as! SurveyTableViewController

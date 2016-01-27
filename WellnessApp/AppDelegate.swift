@@ -138,8 +138,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currentHour = components.hour
         print("Time: ", currentHour)
         
-        let surveyFetchEndTime = 16 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
-        let surveyFetchStartTime = 10 //1//0//0
+        let surveyFetchStartTime = 0 //1//0//0
+        let surveyFetchEndTime = 5 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
+        
         print("program will start fetching download")
         if(currentHour >= surveyFetchStartTime && currentHour <= surveyFetchEndTime-1){
             print("started fetch")
