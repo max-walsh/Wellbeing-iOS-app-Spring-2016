@@ -139,9 +139,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Time: ", currentHour)
         
         let surveyFetchStartTime = 0 //1//0//0
-        let surveyFetchEndTime = 5 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
+        let surveyFetchEndTime = 23 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
         
-        print("program will start fetching download")
+        //print("program will start fetching download")
         if(currentHour >= surveyFetchStartTime && currentHour <= surveyFetchEndTime-1){
             print("started fetch")
             //print("we will rock you.....")

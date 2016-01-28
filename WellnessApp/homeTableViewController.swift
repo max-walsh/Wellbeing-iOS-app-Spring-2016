@@ -480,11 +480,20 @@ class homeTableViewController: UITableViewController {
         self.tableView.setNeedsDisplay()
     }
     
+    func addDRTimeToParse(timestamp: Double) {
+        var tup : PFObject = PFObject(className: "iOSDRTimeStamp2")
+        tup["appID"] = "SB-WB-SAV-2015-11-25"
+        tup["userID"] = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        tup["unixTimeStamp"] = timestamp
+        tup.saveInBackground()
+    }
+    
     @IBAction func transferToDRSite(sender: AnyObject) {
         let drURL = NSURL(string: "http://nd.qualtrics.com/SE/?SID=SV_4SFJmGoj5rpt5u5")
         UIApplication.sharedApplication().openURL(drURL!)
         let time = NSDate().timeIntervalSince1970 * 1000 // Mirrors timestamp format in SurveyTableViewController
         print(time)
+        addDRTimeToParse(time)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "surveySelected" {
