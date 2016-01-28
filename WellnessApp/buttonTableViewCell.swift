@@ -11,7 +11,7 @@ import UIKit
 class buttonTableViewCell: UITableViewCell {
 	
 	var buttonLabel: UILabel?
-	
+    var buttonImage: UIImage?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,6 @@ class buttonTableViewCell: UITableViewCell {
     }
 	func setAnswer(answersOptions: [String] ,answerInd: Int){
 		self.buttonLabel = UILabel()
-		
 		self.buttonLabel!.text = answersOptions[answerInd]
 		let viewsDictionary: [String: UILabel] = ["buttonLabel": self.buttonLabel! ]
 		self.buttonLabel!.translatesAutoresizingMaskIntoConstraints = false
@@ -40,6 +39,18 @@ class buttonTableViewCell: UITableViewCell {
 		self.addConstraints(horizontalLabelConstraint)
 		
 	}
+    
+    func setAnswerImage(/*images: [UIImage], answerInd: Int*/) {
+        self.buttonImage = UIImage(named: "wellness.png")
+        //self.buttonImage =
+        let img = UIImageView(image: self.buttonImage)
+        print("setAnswerImage called")
+        let viewDictionary: [String: UIImage] = ["buttonlabel": self.buttonImage!]
+        self.addSubview(img)
+        
+        
+    }
+    
 	func display(){
 		//self.buttonLabel =
 	}
