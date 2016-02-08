@@ -19,6 +19,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
     var completed = false
     @IBOutlet var nextbutton: UIBarButtonItem!
     
+    
     @IBOutlet var up: UIBarButtonItem!
     
     @IBOutlet var down: UIBarButtonItem!
@@ -46,7 +47,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
         
-        print("load the individual survey  view controller", terminator: "")
+        //print("load the individual survey  view controller", terminator: "")
         completed = false
         
         
@@ -161,7 +162,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
     
     
     @IBAction func pressed(sender: AnyObject) {
-        print("bar button action", terminator: "")
+        //print("bar button action", terminator: "")
         
         // Original
         //var last = tableView.indexPathsForVisibleRows!.last as! NSIndexPath
@@ -201,7 +202,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         
     }
     @IBAction func backbutton(sender: AnyObject) {
-        print("bar button action", terminator: "")
+        //print("bar button action", terminator: "")
         let last: AnyObject = tableView.indexPathsForVisibleRows!.last!
         
         var lastSection = (tableView.indexPathsForVisibleRows?.last!.section)!
@@ -230,7 +231,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         if(indexPath.section>currentSurvey.questions.count || indexPath.row>currentSurvey.questions[indexPath.section].answerOptions.count){
             let cell = UITableViewCell()
             cell.tintColor = UIColor.blueColor()
-            print("here", terminator: "")
+            //print("here", terminator: "")
         }
         
         if currentSurvey.questions[indexPath.section].answerType == "Button" {
@@ -242,7 +243,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             return cell
         }
         else if currentSurvey.questions[indexPath.section].answerType == "Checkbox" {
-            print("i am here......")
+            //print("i am here......")
             let cell = buttonTableViewCell()
             cell.selected = false
             cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
@@ -257,7 +258,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             if cell.responseText.delegate == nil{
                 cell.responseText.delegate = self
             }
-            print("tetx box loading.......")
+            //print("tetx box loading.......")
             return cell
         }
         else{
@@ -378,20 +379,20 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
     
     func setTheStateAtIndexPathCheck(path: NSIndexPath){
         
-        print("current question:\(currentSurvey.questions[path.section].answer)")
+        //print("current question:\(currentSurvey.questions[path.section].answer)")
         
         
         if(currentSurvey.questions[path.section].answerIndex != -1 && currentSurvey.questions[path.section].answerIndex == path.row){
             tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
-            print("should select checkmark \(path.row)")
+            //print("should select checkmark \(path.row)")
         }
         else if currentSurvey.questions[path.section].answer.contains("\(path.row)"){
             tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
-            print("should select checkmark 2nd way \(path.row)")
+            //print("should select checkmark 2nd way \(path.row)")
         }
         else{
             tableView.cellForRowAtIndexPath(path)?.accessoryType = .None
-            print("should select none \(path.row)")
+            //print("should select none \(path.row)")
         }
     }
     
@@ -540,17 +541,17 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             }
         }
         */
-        print("alertView \(buttonIndex) clicked")
+        //print("alertView \(buttonIndex) clicked")
         switch buttonIndex{
         case 0:
             if(Int(currentSurvey.getAnswered())==0){
-                print("You didn't answer any question")
+                //print("You didn't answer any question")
             }else{
                 currentSurvey.surveyCompletedTime = NSDate()
                 currentSurvey.completed = true;
                 currentSurvey.cancelNotifications()
                 currentSurvey.makeNSdate(true)
-                print("going to update parse store")
+                //print("going to update parse store")
                 updateParseDataStore()
                 //	NSNotificationCenter.defaultCenter().postNotificationName(myUpdateTableKey, object: self)
                 self.navigationController?.popToRootViewControllerAnimated(true)

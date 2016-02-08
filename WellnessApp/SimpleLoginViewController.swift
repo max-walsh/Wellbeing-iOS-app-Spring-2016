@@ -54,7 +54,7 @@ class SimpleLoginViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func loginPressed(sender: AnyObject) {
         let row = optionPicker.selectedRowInComponent(0)
         SurveySelection = self.pickerData[row]
-        print("email from text:\(textEmail.text), option picked:\(self.pickerData[row])")
+        //print("email from text:\(textEmail.text), option picked:\(self.pickerData[row])")
         SwiftUtils.setUserDatatoPlist("email", value: textEmail.text)
         // Original
         //userEmail = textEmail.text

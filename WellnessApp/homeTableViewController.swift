@@ -63,7 +63,7 @@ class homeTableViewController: UITableViewController {
     }
     
     func enteredForeground(sender : AnyObject) {
-        print("enter foreground home view", terminator: "")
+        //print("enter foreground home view", terminator: "")
         updateTheSurveys()
         self.tableView.reloadData()
         self.tableView.setNeedsDisplay()
@@ -97,7 +97,7 @@ class homeTableViewController: UITableViewController {
     
     func emptyTheArrays(){
         
-        print("emptying arrays, all surevy:\(AllSurveys.count), complete:\(completedSurveys.count), past:\(pastSurveyArrays.count), future:\(futureSurveysArray.count), surveys:\(surveysArray.count), other:\(otherSurveys.count)")
+        //print("emptying arrays, all surevy:\(AllSurveys.count), complete:\(completedSurveys.count), past:\(pastSurveyArrays.count), future:\(futureSurveysArray.count), surveys:\(surveysArray.count), other:\(otherSurveys.count)")
         
         AllSurveys.removeAll(keepCapacity: false)
         completedSurveys.removeAll(keepCapacity: false)
@@ -347,9 +347,9 @@ class homeTableViewController: UITableViewController {
             
             if error == nil {
                 //var query2 = query
-                print("where is ghapla..")
+                //print("where is ghapla..")
                 if let objects = objects as? [PFObject] {
-                    print("object count:\(objects.count)")
+                    //print("object count:\(objects.count)")
                     if objects.count>0{
                         self.emptyTheArrays()
                     } else{
@@ -406,10 +406,10 @@ class homeTableViewController: UITableViewController {
                     print("BAD", terminator: "")
                 }
                 //refresh
-                print("refresh the table....")
+                //print("refresh the table....")
             }
             else {
-                print("FAILED HERE")
+                //print("FAILED HERE")
                 print("Error: \(error) \(error!.userInfo)")
             }
         }
@@ -492,7 +492,7 @@ class homeTableViewController: UITableViewController {
         let drURL = NSURL(string: "http://nd.qualtrics.com/SE/?SID=SV_4SFJmGoj5rpt5u5")
         UIApplication.sharedApplication().openURL(drURL!)
         let time = NSDate().timeIntervalSince1970 * 1000 // Mirrors timestamp format in SurveyTableViewController
-        print(time)
+        //print(time)
         addDRTimeToParse(time)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

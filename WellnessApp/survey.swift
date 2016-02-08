@@ -112,7 +112,7 @@ class survey {
             }
             if self.sendDays.contains(SwiftUtils.getDayOfWeek()) {
                 if( expirationTime.timeIntervalSinceNow > 0 && surveyTime.timeIntervalSinceNow < 0){
-                    print("present survey, expiration time:\(expirationTime), survey time:\(surveyTime)")
+                    //print("present survey, expiration time:\(expirationTime), survey time:\(surveyTime)")
                     return "present"
                 }
                 else if(expirationTime.timeIntervalSinceNow < 0 ){
@@ -153,12 +153,12 @@ class survey {
                     makeNSdate(false)
                     return "past"
                 } else {
-                    print("return future, expiration time:\(expirationTime), survey time:\(surveyTime)")
+                    //print("return future, expiration time:\(expirationTime), survey time:\(surveyTime)")
                     return "future"
                 }
             }
         }
-        print("return none, expiration time:\(expirationTime), survey time:\(surveyTime)")
+        //print("return none, expiration time:\(expirationTime), survey time:\(surveyTime)")
         return "none"
     }
     

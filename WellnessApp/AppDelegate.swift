@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dataShouldBeReset = true
         initializeParse()
         setRootViewController();
-        print("launching", terminator: "")
+        //print("launching", terminator: "")
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         //var minfetch = UIApplicationBackgroundFetchIntervalMinimum  // set to the minimum amount
         
@@ -124,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
             }else {
-                print("FAILED HERE")
+                //print("FAILED HERE")
                 print("Error: \(error) \(error!.userInfo)")
             }
         }
@@ -136,14 +136,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Hour, .Minute], fromDate:  NSDate())
         let currentHour = components.hour
-        print("Time: ", currentHour)
+        //print("Time: ", currentHour)
         
         let surveyFetchStartTime = 0 //1//0//0
         let surveyFetchEndTime = 23 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
         
         //print("program will start fetching download")
         if(currentHour >= surveyFetchStartTime && currentHour <= surveyFetchEndTime-1){
-            print("started fetch")
+            //print("started fetch")
             //print("we will rock you.....")
             application.cancelAllLocalNotifications()
             // not used
@@ -162,22 +162,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let AllSurveys = task.result as? NSArray
                     for ob in AllSurveys! {
                         let surveyString = ob["Survey"] as! String
-                        print("survey:\(surveyString)")
+                        //print("survey:\(surveyString)")
                         query = PFQuery(className: surveyString)
                         query.findObjectsInBackground().continueWithSuccessBlock({
                             (task: BFTask!) -> AnyObject! in
                             return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
                                 (ignored: BFTask!) -> AnyObject! in
                                 let allQuestions = task.result as? NSArray
-                                print("all questions:\(allQuestions?.count)")
+                                //print("all questions:\(allQuestions?.count)")
                                 return PFObject.pinAllInBackground(allQuestions as? [AnyObject])
                             })
                         })
-                        print("finish inner block 2")
+                        //print("finish inner block 2")
                         
                     }
                     NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
-                    print("Posted special notification....")
+                    //print("Posted special notification....")
                     return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
                 })
             })
@@ -195,7 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let email:String? = SwiftUtils.getUserDatafromPlist("email") as? String
         let consent:Bool! = SwiftUtils.getUserDatafromPlist("consent") as? Bool
-        print("email:\(email)")
+        //print("email:\(email)")
         
         if(consent == true){
             if(SwiftUtils.stringIsEmpty(email)){
@@ -229,7 +229,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initDataLoadingTest(){
-        print("we will rock you.....")
+        //print("we will rock you.....")
         //application.cancelAllLocalNotifications()
         
         //var querysurveyStrings: [String] = [String]()
@@ -247,14 +247,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let AllSurveys = task.result as? NSArray
                 for ob in AllSurveys! {
                     let surveyString = ob["Survey"] as! String
-                    print("survey:\(surveyString)")
+                    //print("survey:\(surveyString)")
                     query = PFQuery(className: surveyString)
                     query.findObjectsInBackground().continueWithSuccessBlock({
                         (task: BFTask!) -> AnyObject! in
                         return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
                             (ignored: BFTask!) -> AnyObject! in
                             let allQuestions = task.result as? NSArray
-                            print("all questions:\(allQuestions?.count)")
+                            //print("all questions:\(allQuestions?.count)")
                             return PFObject.pinAllInBackground(allQuestions as? [AnyObject])
                         })
                     })

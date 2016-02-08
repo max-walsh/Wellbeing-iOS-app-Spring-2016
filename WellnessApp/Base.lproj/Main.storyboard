@@ -130,6 +130,17 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3bV-qP-SWf" id="VjB-LL-4aO">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nxf-58-cYr">
+                                            <rect key="frame" x="515" y="4" width="48" height="35"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Nxf-58-cYr" firstAttribute="leading" secondItem="VjB-LL-4aO" secondAttribute="leadingMargin" id="Jpo-Cp-EV4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Nxf-58-cYr" secondAttribute="trailing" id="VfA-Nv-KtJ"/>
+                                        <constraint firstItem="Nxf-58-cYr" firstAttribute="top" secondItem="VjB-LL-4aO" secondAttribute="topMargin" id="gkP-BZ-ksY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Nxf-58-cYr" secondAttribute="bottom" id="goH-aR-Oe7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="multiselectCell" textLabel="az3-53-ISu" style="IBUITableViewCellStyleDefault" id="eWj-SQ-A7X">
@@ -148,6 +159,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                </accessibility>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sliderCell" rowHeight="84" id="eQL-XZ-PYi" customClass="slideTableViewCell" customModule="WellnessApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="110" width="600" height="84"/>
@@ -269,7 +283,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcP-19-nmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="1236"/>
+            <point key="canvasLocation" x="1900" y="1238"/>
         </scene>
         <!--loginView-->
         <scene sceneID="Muz-ll-f2X">

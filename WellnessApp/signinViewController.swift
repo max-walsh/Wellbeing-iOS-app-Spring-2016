@@ -59,7 +59,7 @@ class signinViewController: UIViewController {
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if error == nil {
-                print("signed UP")
+                //print("signed UP")
                 self.DismissKeyboard()
                 userEmail = user.username!
                 let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -72,7 +72,7 @@ class signinViewController: UIViewController {
                 let errorString = error!.localizedDescription
                 //println(errorString)
                 // Show the errorString somewhere and let the user try again.
-                print("NOT signed UP")
+                //print("NOT signed UP")
                 self.showAlert(errorString)
             }
         }
