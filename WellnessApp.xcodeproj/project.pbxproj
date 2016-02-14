@@ -63,6 +63,9 @@
 		9562F58F1ADC0B6100BC28B2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9562F58E1ADC0B6100BC28B2 /* Media.xcassets */; };
 		95CAD5B51ADB6CCE008CC7A1 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD5B41ADB6CCE008CC7A1 /* time.swift */; };
 		95DF572E1ADBA065007D987C /* blackrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DF572C1ADBA065007D987C /* blackrest.png */; };
+		F17129041C71176D0037407C /* SurveySummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129031C71176D0037407C /* SurveySummaryTableViewController.swift */; };
+		F17129061C7119B80037407C /* SurveySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129051C7119B80037407C /* SurveySummary.swift */; };
+		F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181747D1C68FEB8006431E7 /* TestThread.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		95CAD5B41ADB6CCE008CC7A1 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = time.swift; path = ../time.swift; sourceTree = "<group>"; };
 		95DF572B1ADBA065007D987C /* well_beingicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = well_beingicon2.png; sourceTree = "<group>"; };
 		95DF572C1ADBA065007D987C /* blackrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackrest.png; sourceTree = "<group>"; };
+		F17129031C71176D0037407C /* SurveySummaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummaryTableViewController.swift; sourceTree = "<group>"; };
+		F17129051C7119B80037407C /* SurveySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummary.swift; sourceTree = "<group>"; };
+		F181747D1C68FEB8006431E7 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,11 +261,13 @@
 		9560F16C1AD99EA90085F9EA /* WellnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				F17129021C7117250037407C /* SurveySummary */,
 				950639F41AEEE0330054E37C /* sliders */,
 				954342FA1AE97B82002945DE /* homescreen */,
 				9559CE4C1ADACC2800DDE65B /* login/homescreen */,
 				950639CB1AEEC9560054E37C /* Survey screen */,
 				9560F16F1AD99EA90085F9EA /* AppDelegate.swift */,
+				F181747D1C68FEB8006431E7 /* TestThread.swift */,
 				9560F1731AD99EA90085F9EA /* Main.storyboard */,
 				9560F16D1AD99EA90085F9EA /* Supporting Files */,
 			);
@@ -334,6 +342,15 @@
 				0B4CE71509C70E9B48EEF491 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F17129021C7117250037407C /* SurveySummary */ = {
+			isa = PBXGroup;
+			children = (
+				F17129031C71176D0037407C /* SurveySummaryTableViewController.swift */,
+				F17129051C7119B80037407C /* SurveySummary.swift */,
+			);
+			name = SurveySummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +482,8 @@
 				42BCA1141C02C09200E02FCA /* consentViewController.swift in Sources */,
 				9559CE371ADA03E800DDE65B /* question.swift in Sources */,
 				9521C6BD1B04686100D53C8C /* textResponseTableViewCell.swift in Sources */,
+				F17129041C71176D0037407C /* SurveySummaryTableViewController.swift in Sources */,
+				F17129061C7119B80037407C /* SurveySummary.swift in Sources */,
 				95CAD5B51ADB6CCE008CC7A1 /* time.swift in Sources */,
 				9559CE451ADA090300DDE65B /* SurveyTableViewController.swift in Sources */,
 				42B426F31B4875B900CD42F5 /* SimpleLoginViewController.swift in Sources */,
@@ -472,6 +491,7 @@
 				9559CE471ADA183800DDE65B /* sliderTableViewCell.swift in Sources */,
 				956023671AEE191F00F94C77 /* CustomHeaderCell.swift in Sources */,
 				9560F1701AD99EA90085F9EA /* AppDelegate.swift in Sources */,
+				F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */,
 				9559CE351AD9FB3C00DDE65B /* survey.swift in Sources */,
 				9559CE4B1ADA29F800DDE65B /* questionHeaderAnswerView.swift in Sources */,
 				9559CE311AD9F86700DDE65B /* homeTableViewCell.swift in Sources */,

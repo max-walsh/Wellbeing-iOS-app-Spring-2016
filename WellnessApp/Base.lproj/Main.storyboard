@@ -6,6 +6,34 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Survey Summary Table View Controller-->
+        <scene sceneID="WFj-MX-CT9">
+            <objects>
+                <tableViewController id="jnN-1R-BDF" customClass="SurveySummaryTableViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Sp-zJ-xEu" customClass="SurveySummaryTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BI9-Rl-o60">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BI9-Rl-o60" id="3jg-2u-E1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jnN-1R-BDF" id="sdC-fc-kft"/>
+                            <outlet property="delegate" destination="jnN-1R-BDF" id="2x0-qf-Coj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxc-eD-i66" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594" y="368"/>
+        </scene>
         <!--WellSense Main Menu-->
         <scene sceneID="JhH-Dx-ndU">
             <objects>
@@ -101,6 +129,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="WellSense Main Menu" id="0hu-AB-jCF">
+                        <barButtonItem key="leftBarButtonItem" title="Summary" id="gwY-0g-UBh">
+                            <connections>
+                                <segue destination="jnN-1R-BDF" kind="show" id="gbp-SR-dUO"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="DR" id="Zjs-14-Umo">
                             <connections>
                                 <action selector="transferToDRSite:" destination="Hb2-GA-4go" id="Ydc-ga-lzC"/>
@@ -108,6 +141,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="summaryLabel" destination="gwY-0g-UBh" id="GQI-ee-bGN"/>
                         <segue destination="Neg-iT-RtU" kind="show" identifier="surveySelected" id="4SD-go-5eQ"/>
                     </connections>
                 </tableViewController>
@@ -643,7 +677,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHO-dA-3Cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="1228"/>
+            <point key="canvasLocation" x="-37" y="1228"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@ import SystemConfiguration
 
 class homeTableViewController: UITableViewController {
     
+    @IBOutlet weak var summaryLabel: UIBarButtonItem!
     var otherSurveys: [survey] = [survey]()
     var completedSurveys: [survey] = [survey]()
     var surveysArray: [survey] = [survey]()
