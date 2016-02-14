@@ -23,6 +23,7 @@ class homeTableViewController: UITableViewController {
     var selectedSurveyGroup = "forever"
     //var currentUser = PFUser.currentUser
     var reset = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -333,6 +334,7 @@ class homeTableViewController: UITableViewController {
     func maketheobjectswithLocalDataStore(){
         //AllSurveys = surveysArray + pastSurveyArrays //
         var survey1 : survey?
+        var activeCount = 0
         var className = "SurveySummary"
         if SurveySelection == "French" {
             className = "French"
@@ -379,6 +381,7 @@ class homeTableViewController: UITableViewController {
                                 survey1!.active = objects[surveyNumber]["Active"] as! Bool
                                 
                                 if survey1!.active{
+                                    activeCount++
                                     print("survey active:\(survey1!.surveyDescriptor)")
                                 } else{
                                     print("survey not active:\(survey1!.surveyDescriptor)")
@@ -399,6 +402,7 @@ class homeTableViewController: UITableViewController {
                                 self.AllSurveys.append(survey1!)
                                 
                             }
+                            summary.DailyTotal = activeCount
                         }
                     }
                     self.updateTheSurveys()
