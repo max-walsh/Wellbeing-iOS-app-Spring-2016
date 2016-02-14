@@ -105,6 +105,9 @@ class survey {
         
     }
     func pastPresentFutureOrForever()->String{
+        summary.DailyTotal++
+        print("Ididthis: \(summary.DailyTotal)")
+        //print("complete: \(summary.DailyComplete)")
         print("survey name:\(surveyName), survey days:\(sendDays)")
         if(self.active == true){
             if(self.sendDays[0] == 11){

@@ -24,14 +24,13 @@ class homeTableViewController: UITableViewController {
     //var currentUser = PFUser.currentUser
     var reset = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = true;
         //maketheobjectswithLocalDataStore()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "maketheobjectswithLocalDataStore", name: mySpecialNotificationKey, object: nil)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "emptyTheArrays", name: updateKey, object: nil)
-        
+
         /*
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
@@ -418,7 +417,7 @@ class homeTableViewController: UITableViewController {
     }
     
     func updateTheSurveys(){
-        
+
         
         if !(surveysArray.isEmpty && futureSurveysArray.isEmpty && pastSurveyArrays.isEmpty && foreverSurveysArray.isEmpty){
             AllSurveys = surveysArray + pastSurveyArrays + futureSurveysArray + foreverSurveysArray

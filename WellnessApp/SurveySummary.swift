@@ -15,4 +15,11 @@ class SurveySummary {
     var DailyComplete = 0
     var WeeklyComplete = 0
     
+    init(a: Int, b: Int, c: Int, d:Int) {
+        self.DailyTotal = a
+        self.WeeklyTotal = b
+        self.DailyComplete = c
+        self.WeeklyComplete = d
+    }
+    
 }

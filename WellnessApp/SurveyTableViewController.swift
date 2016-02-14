@@ -516,6 +516,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             let nextView :homeTableViewController = homeTableViewController()
             nextView.inProgressSurveys.append(currentSurvey)
         }
+        
     }
     override func didMoveToParentViewController(parent: UIViewController?){
         if let parent = parent as? homeTableViewController{

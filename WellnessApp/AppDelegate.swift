@@ -14,6 +14,7 @@ let mySpecialNotificationKey = "com.amcmaho4.specialNotificationKey"
 let updateKey = "com.amcmaho4.updateKey"
 var userEmail = ""
 var SurveySelection = ""
+var summary : SurveySummary = SurveySummary(a: 0, b: 0, c: 0, d: 0)
 
 
 @UIApplicationMain
