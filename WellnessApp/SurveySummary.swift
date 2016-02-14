@@ -9,7 +9,10 @@
 import Foundation
 
 class SurveySummary {
+    
     var DailyTotal = 0
     var WeeklyTotal = 0
+    var DailyComplete = 0
+    var WeeklyComplete = 0
     
 }
