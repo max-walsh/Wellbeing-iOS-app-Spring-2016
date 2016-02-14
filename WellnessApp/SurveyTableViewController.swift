@@ -556,6 +556,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
                 updateParseDataStore()
                 //	NSNotificationCenter.defaultCenter().postNotificationName(myUpdateTableKey, object: self)
                 self.navigationController?.popToRootViewControllerAnimated(true)
+                summary.DailyComplete++
             }
             /*
             currentSurvey.surveyCompletedTime = NSDate()
