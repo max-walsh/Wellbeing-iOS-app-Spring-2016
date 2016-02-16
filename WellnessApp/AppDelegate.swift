@@ -14,7 +14,7 @@ let mySpecialNotificationKey = "com.amcmaho4.specialNotificationKey"
 let updateKey = "com.amcmaho4.updateKey"
 var userEmail = ""
 var SurveySelection = ""
-var summary : SurveySummary = SurveySummary(a: 0, b: 0, c: 0, d: 0)
+var summary : SurveySummary = SurveySummary(a: 0, b: 0)
 
 
 @UIApplicationMain
@@ -146,6 +146,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(currentHour >= surveyFetchStartTime && currentHour <= surveyFetchEndTime-1){
             //print("started fetch")
             //print("we will rock you.....")
+            
+            // Reset daily survey totals
+            summary.WeeklyComplete.append(summary.DailyComplete)
+            //summary.WeeklyTotal.append
+            summary.DailyComplete = 0
+            summary.DailyTotal = 0
+
+            
             application.cancelAllLocalNotifications()
             // not used
             //var querysurveyStrings: [String] = [String]()

@@ -31,7 +31,7 @@ class homeTableViewController: UITableViewController {
         //maketheobjectswithLocalDataStore()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "maketheobjectswithLocalDataStore", name: mySpecialNotificationKey, object: nil)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "emptyTheArrays", name: updateKey, object: nil)
-
+        summary.DailyComplete = completedSurveys.count
         /*
         var currentUser = PFUser.currentUser()
         if currentUser != nil {

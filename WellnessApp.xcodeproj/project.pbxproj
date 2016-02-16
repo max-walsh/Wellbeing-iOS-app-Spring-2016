@@ -65,6 +65,7 @@
 		95DF572E1ADBA065007D987C /* blackrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DF572C1ADBA065007D987C /* blackrest.png */; };
 		F17129061C7119B80037407C /* SurveySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129051C7119B80037407C /* SurveySummary.swift */; };
 		F17129081C71343F0037407C /* SurveySummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129071C71343F0037407C /* SurveySummaryViewController.swift */; };
+		F171290A1C7147480037407C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129091C7147480037407C /* Queue.swift */; };
 		F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181747D1C68FEB8006431E7 /* TestThread.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		95DF572C1ADBA065007D987C /* blackrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackrest.png; sourceTree = "<group>"; };
 		F17129051C7119B80037407C /* SurveySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummary.swift; sourceTree = "<group>"; };
 		F17129071C71343F0037407C /* SurveySummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummaryViewController.swift; sourceTree = "<group>"; };
+		F17129091C7147480037407C /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		F181747D1C68FEB8006431E7 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +269,7 @@
 				9559CE4C1ADACC2800DDE65B /* login/homescreen */,
 				950639CB1AEEC9560054E37C /* Survey screen */,
 				9560F16F1AD99EA90085F9EA /* AppDelegate.swift */,
+				F17129091C7147480037407C /* Queue.swift */,
 				F181747D1C68FEB8006431E7 /* TestThread.swift */,
 				9560F1731AD99EA90085F9EA /* Main.storyboard */,
 				9560F16D1AD99EA90085F9EA /* Supporting Files */,
@@ -495,6 +498,7 @@
 				9559CE4B1ADA29F800DDE65B /* questionHeaderAnswerView.swift in Sources */,
 				9559CE311AD9F86700DDE65B /* homeTableViewCell.swift in Sources */,
 				953291BF1AFDD15A008106F0 /* responses.swift in Sources */,
+				F171290A1C7147480037407C /* Queue.swift in Sources */,
 				9559CE301AD9F86700DDE65B /* homeTableViewController.swift in Sources */,
 				F17129081C71343F0037407C /* SurveySummaryViewController.swift in Sources */,
 				9548A5A41AF5433F00189D28 /* IJReachability.swift in Sources */,

@@ -11,15 +11,13 @@ import Foundation
 class SurveySummary {
     
     var DailyTotal = 0
-    var WeeklyTotal = 0
+    var WeeklyTotal = Queue<Int>()
     var DailyComplete = 0
-    var WeeklyComplete = 0
+    var WeeklyComplete = Queue<Int>()
     
-    init(a: Int, b: Int, c: Int, d:Int) {
+    init(a: Int, b: Int) {
         self.DailyTotal = a
-        self.WeeklyTotal = b
-        self.DailyComplete = c
-        self.WeeklyComplete = d
+        self.DailyComplete = b
     }
     
 }
