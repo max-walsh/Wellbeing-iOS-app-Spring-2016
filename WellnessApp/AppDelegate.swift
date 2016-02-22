@@ -149,6 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Reset daily survey totals
             summary.WeeklyComplete.append(summary.DailyComplete)
+            summary.WeeklyTotal.append(summary.DailyTotal)
             //summary.WeeklyTotal.append
             summary.DailyComplete = 0
             summary.DailyTotal = 0

@@ -12,12 +12,16 @@ class SurveySummaryViewController: UIViewController {
 
     @IBOutlet weak var CompletedToday: UILabel!
     @IBOutlet weak var TotalToday: UILabel!
+    @IBOutlet weak var SevenDayCompleted: UILabel!
+    @IBOutlet weak var SevenDayTotal: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         CompletedToday.text? = "\(summary.DailyComplete)"
         TotalToday.text? = "\(summary.DailyTotal)"
+        SevenDayCompleted.text? = "\(summary.WeeklyComplete)"
+        SevenDayTotal.text? = "\(summary.WeeklyTotal)"
     }
 
     override func didReceiveMemoryWarning() {
