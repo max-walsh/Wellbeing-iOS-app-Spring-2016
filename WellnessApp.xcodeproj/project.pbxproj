@@ -63,6 +63,7 @@
 		9562F58F1ADC0B6100BC28B2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9562F58E1ADC0B6100BC28B2 /* Media.xcassets */; };
 		95CAD5B51ADB6CCE008CC7A1 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD5B41ADB6CCE008CC7A1 /* time.swift */; };
 		95DF572E1ADBA065007D987C /* blackrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DF572C1ADBA065007D987C /* blackrest.png */; };
+		F1D4FDB11C7B8EDF0064CDA3 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D4FDB01C7B8EDF0064CDA3 /* TestThread.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		95CAD5B41ADB6CCE008CC7A1 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = time.swift; path = ../time.swift; sourceTree = "<group>"; };
 		95DF572B1ADBA065007D987C /* well_beingicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = well_beingicon2.png; sourceTree = "<group>"; };
 		95DF572C1ADBA065007D987C /* blackrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackrest.png; sourceTree = "<group>"; };
+		F1D4FDB01C7B8EDF0064CDA3 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				9559CE4C1ADACC2800DDE65B /* login/homescreen */,
 				950639CB1AEEC9560054E37C /* Survey screen */,
 				9560F16F1AD99EA90085F9EA /* AppDelegate.swift */,
+				F1D4FDB01C7B8EDF0064CDA3 /* TestThread.swift */,
 				9560F1731AD99EA90085F9EA /* Main.storyboard */,
 				9560F16D1AD99EA90085F9EA /* Supporting Files */,
 			);
@@ -472,6 +475,7 @@
 				9559CE471ADA183800DDE65B /* sliderTableViewCell.swift in Sources */,
 				956023671AEE191F00F94C77 /* CustomHeaderCell.swift in Sources */,
 				9560F1701AD99EA90085F9EA /* AppDelegate.swift in Sources */,
+				F1D4FDB11C7B8EDF0064CDA3 /* TestThread.swift in Sources */,
 				9559CE351AD9FB3C00DDE65B /* survey.swift in Sources */,
 				9559CE4B1ADA29F800DDE65B /* questionHeaderAnswerView.swift in Sources */,
 				9559CE311AD9F86700DDE65B /* homeTableViewCell.swift in Sources */,

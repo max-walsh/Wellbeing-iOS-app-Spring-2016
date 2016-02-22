@@ -148,7 +148,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.cancelAllLocalNotifications()
             // not used
             //var querysurveyStrings: [String] = [String]()
-            var className = "SurveySummary"
+            var className = "French" //"SurveySummary"
             if SurveySelection == "French" {
                 className = "French"
             } else if SurveySelection == "Spanish" {
@@ -157,8 +157,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var query: PFQuery = PFQuery(className:className)
             query.findObjectsInBackground().continueWithSuccessBlock({
                 (task: BFTask!) -> AnyObject! in
-                return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
-                    (ignored: BFTask!) -> AnyObject! in
+                //return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
+                    //(ignored: BFTask!) -> AnyObject! in
                     let AllSurveys = task.result as? NSArray
                     for ob in AllSurveys! {
                         let surveyString = ob["Survey"] as! String
@@ -166,21 +166,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         query = PFQuery(className: surveyString)
                         query.findObjectsInBackground().continueWithSuccessBlock({
                             (task: BFTask!) -> AnyObject! in
-                            return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
-                                (ignored: BFTask!) -> AnyObject! in
+                            //return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
+                                //(ignored: BFTask!) -> AnyObject! in
                                 let allQuestions = task.result as? NSArray
                                 //print("all questions:\(allQuestions?.count)")
                                 return PFObject.pinAllInBackground(allQuestions as? [AnyObject])
-                            })
+                            //})
                         })
                         //print("finish inner block 2")
                         
                     }
-                    NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
+                    //NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
                     //print("Posted special notification....")
+                    TestThread.start()
                     return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
                 })
-            })
+            //})
             completionHandler(UIBackgroundFetchResult.NewData)
         }
         else {
@@ -233,7 +234,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //application.cancelAllLocalNotifications()
         
         //var querysurveyStrings: [String] = [String]()
-        var className = "SurveySummary"
+        var className = "French" //"SurveySummary"
         if SurveySelection == "French" {
             className = "French"
         } else if SurveySelection == "Spanish" {
@@ -242,8 +243,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var query: PFQuery = PFQuery(className:className)
         query.findObjectsInBackground().continueWithSuccessBlock({
             (task: BFTask!) -> AnyObject! in
-            return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
-                (ignored: BFTask!) -> AnyObject! in
+            //return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
+                //(ignored: BFTask!) -> AnyObject! in
                 let AllSurveys = task.result as? NSArray
                 for ob in AllSurveys! {
                     let surveyString = ob["Survey"] as! String
@@ -251,17 +252,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     query = PFQuery(className: surveyString)
                     query.findObjectsInBackground().continueWithSuccessBlock({
                         (task: BFTask!) -> AnyObject! in
-                        return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
-                            (ignored: BFTask!) -> AnyObject! in
+                        //return PFObject.unpinAllObjectsInBackground().continueWithSuccessBlock({
+                            //(ignored: BFTask!) -> AnyObject! in
                             let allQuestions = task.result as? NSArray
                             //print("all questions:\(allQuestions?.count)")
                             return PFObject.pinAllInBackground(allQuestions as? [AnyObject])
-                        })
+                        //})
                     })
                 }
-                NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
+                //NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
+                TestThread.start()
                 return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
-            })
+            //})
         })
     }
     
