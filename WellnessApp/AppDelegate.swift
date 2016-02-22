@@ -178,7 +178,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     //NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
                     //print("Posted special notification....")
-                    TestThread.start()
+                    //TestThread.start()
                     return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
                 })
             //})
@@ -261,7 +261,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     })
                 }
                 //NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
-                TestThread.start()
+                //TestThread.start()
                 return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
             //})
         })
