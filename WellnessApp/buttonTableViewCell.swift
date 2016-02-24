@@ -11,7 +11,7 @@ import UIKit
 class buttonTableViewCell: UITableViewCell {
 	
 	var buttonLabel: UILabel?
-    var buttonImage: UIImage?
+    var buttonImage: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +25,6 @@ class buttonTableViewCell: UITableViewCell {
 	func setAnswer(answersOptions: [String] ,answerInd: Int){
 		self.buttonLabel = UILabel()
 		self.buttonLabel!.text = answersOptions[answerInd]
-        //self.buttonLabel!.text = "why"
 		let viewsDictionary: [String: UILabel] = ["buttonLabel": self.buttonLabel! ]
 		self.buttonLabel!.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.buttonLabel!)
@@ -42,14 +41,22 @@ class buttonTableViewCell: UITableViewCell {
 	}
     
     func setAnswerImage(/*images: [UIImage], answerInd: Int*/) {
-        self.buttonImage = UIImage(named: "up.png")
+        let img = UIImage(named: "up.png")
         //self.buttonImage =
-        let img = UIImageView(image: self.buttonImage)
-        print("setAnswerImage called")
-        //let viewDictionary: [String: UIImage] = ["buttonlabel": self.buttonImage!]
-        self.addSubview(img)
+        self.buttonImage = UIImageView(image: img)
+        self.buttonImage!.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.buttonImage!)
+        let vertConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
+
         
-        
+        let horConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0)
+        print("start setAnswerImage called\n\n\n\n\n\n")
+        //let widthConstraint = NSLayoutConstraint.
+        //self.buttonImage!.addConstraint(vertConstraint)
+        //self.buttonImage!.addConstraint(horConstraint)
+        self.addConstraint(vertConstraint)
+        self.addConstraint(horConstraint)
+        print("setAnswerImage called\n\n\n\n\n\n")
     }
     
 	func display(){
