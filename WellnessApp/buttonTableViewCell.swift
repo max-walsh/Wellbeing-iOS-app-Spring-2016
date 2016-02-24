@@ -46,17 +46,13 @@ class buttonTableViewCell: UITableViewCell {
         self.buttonImage = UIImageView(image: img)
         self.buttonImage!.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.buttonImage!)
-        let vertConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
-
         
+        let vertConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
         let horConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1.0, constant: 0.0)
-        print("start setAnswerImage called\n\n\n\n\n\n")
-        //let widthConstraint = NSLayoutConstraint.
-        //self.buttonImage!.addConstraint(vertConstraint)
-        //self.buttonImage!.addConstraint(horConstraint)
+
         self.addConstraint(vertConstraint)
         self.addConstraint(horConstraint)
-        print("setAnswerImage called\n\n\n\n\n\n")
+        
     }
     
 	func display(){
