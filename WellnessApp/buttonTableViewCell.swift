@@ -49,7 +49,7 @@ class buttonTableViewCell: UITableViewCell {
         let vertConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
 
         
-        let horConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0)
+        let horConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1.0, constant: 0.0)
         print("start setAnswerImage called\n\n\n\n\n\n")
         //let widthConstraint = NSLayoutConstraint.
         //self.buttonImage!.addConstraint(vertConstraint)
