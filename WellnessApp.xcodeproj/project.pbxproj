@@ -63,6 +63,11 @@
 		9562F58F1ADC0B6100BC28B2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9562F58E1ADC0B6100BC28B2 /* Media.xcassets */; };
 		95CAD5B51ADB6CCE008CC7A1 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD5B41ADB6CCE008CC7A1 /* time.swift */; };
 		95DF572E1ADBA065007D987C /* blackrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DF572C1ADBA065007D987C /* blackrest.png */; };
+		F1C373D51C825B71003E3EAB /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373D11C825B71003E3EAB /* angry.png */; };
+		F1C373D61C825B71003E3EAB /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373D21C825B71003E3EAB /* happy.png */; };
+		F1C373D71C825B71003E3EAB /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373D31C825B71003E3EAB /* sad.png */; };
+		F1C373D81C825B71003E3EAB /* veryAngry.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373D41C825B71003E3EAB /* veryAngry.png */; };
+		F1C373DA1C825BCC003E3EAB /* veryHappy.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373D91C825BCC003E3EAB /* veryHappy.png */; };
 		F1D4FDB11C7B8EDF0064CDA3 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D4FDB01C7B8EDF0064CDA3 /* TestThread.swift */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +146,11 @@
 		95CAD5B41ADB6CCE008CC7A1 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = time.swift; path = ../time.swift; sourceTree = "<group>"; };
 		95DF572B1ADBA065007D987C /* well_beingicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = well_beingicon2.png; sourceTree = "<group>"; };
 		95DF572C1ADBA065007D987C /* blackrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackrest.png; sourceTree = "<group>"; };
+		F1C373D11C825B71003E3EAB /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angry.png; path = ../Downloads/angry.png; sourceTree = "<group>"; };
+		F1C373D21C825B71003E3EAB /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy.png; path = ../Downloads/happy.png; sourceTree = "<group>"; };
+		F1C373D31C825B71003E3EAB /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = ../Downloads/sad.png; sourceTree = "<group>"; };
+		F1C373D41C825B71003E3EAB /* veryAngry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veryAngry.png; path = ../Downloads/veryAngry.png; sourceTree = "<group>"; };
+		F1C373D91C825BCC003E3EAB /* veryHappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veryHappy.png; path = ../Downloads/veryHappy.png; sourceTree = "<group>"; };
 		F1D4FDB01C7B8EDF0064CDA3 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +199,11 @@
 				9559CE341AD9FB3C00DDE65B /* survey.swift */,
 				9559CE481ADA197000DDE65B /* buttonTableViewCell.swift */,
 				9559CE441ADA090300DDE65B /* SurveyTableViewController.swift */,
+				F1C373D11C825B71003E3EAB /* angry.png */,
+				F1C373D21C825B71003E3EAB /* happy.png */,
+				F1C373D31C825B71003E3EAB /* sad.png */,
+				F1C373D41C825B71003E3EAB /* veryAngry.png */,
+				F1C373D91C825BCC003E3EAB /* veryHappy.png */,
 				9521C6BC1B04686100D53C8C /* textResponseTableViewCell.swift */,
 			);
 			name = "Survey screen";
@@ -430,20 +445,25 @@
 				95285CAF1AF5BF15001989B7 /* trackBackground@2x.png in Resources */,
 				954342F91AE4A9FF002945DE /* up.png in Resources */,
 				9559CE421ADA078D00DDE65B /* wellness.jpg in Resources */,
+				F1C373D81C825B71003E3EAB /* veryAngry.png in Resources */,
 				9559CE431ADA078D00DDE65B /* sleep.jpg in Resources */,
 				9559CE411ADA078D00DDE65B /* social-1.jpg in Resources */,
 				954342F71AE4A9AD002945DE /* down.png in Resources */,
+				F1C373D71C825B71003E3EAB /* sad.png in Resources */,
 				95DF572E1ADBA065007D987C /* blackrest.png in Resources */,
 				9559CE3E1ADA078D00DDE65B /* Faith.jpg in Resources */,
 				9559CE3F1ADA078D00DDE65B /* mood.jpg in Resources */,
 				9560F1751AD99EA90085F9EA /* Main.storyboard in Resources */,
 				9560F17A1AD99EA90085F9EA /* LaunchScreen.xib in Resources */,
+				F1C373DA1C825BCC003E3EAB /* veryHappy.png in Resources */,
 				956023651AEE122C00F94C77 /* noBack.png in Resources */,
 				9560F1771AD99EA90085F9EA /* Images.xcassets in Resources */,
 				42B426F11B486C9E00CD42F5 /* user.plist in Resources */,
+				F1C373D51C825B71003E3EAB /* angry.png in Resources */,
 				9562F58F1ADC0B6100BC28B2 /* Media.xcassets in Resources */,
 				95285CAE1AF5BF15001989B7 /* higlightedBarBackground@2x.png in Resources */,
 				9559CE401ADA078D00DDE65B /* Reconstruction.jpg in Resources */,
+				F1C373D61C825B71003E3EAB /* happy.png in Resources */,
 				956023641AEE122C00F94C77 /* generic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
