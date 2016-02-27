@@ -238,7 +238,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             let cell = buttonTableViewCell()
             cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
             //test
-            //cell.setAnswerImage()
+            cell.setAnswerImage(indexPath.row, leftJustify: false)
             setTheStateAtIndexPath(indexPath) // selects/ deselects the appropriate cells
             return cell
         }

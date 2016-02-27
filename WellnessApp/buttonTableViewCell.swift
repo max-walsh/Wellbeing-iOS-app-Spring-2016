@@ -11,7 +11,7 @@ import UIKit
 class buttonTableViewCell: UITableViewCell {
 	
 	var buttonLabel: UILabel?
-    var buttonImage: UIImage?
+    var buttonImage: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,14 +41,32 @@ class buttonTableViewCell: UITableViewCell {
 		
 	}
     
-    func setAnswerImage(/*images: [UIImage], answerInd: Int*/) {
-        self.buttonImage = UIImage(named: "up.png")
+    func setAnswerImage(answerInd: Int, leftJustify: Bool) {
+        let images = ["veryHappy.png", "happy.png", "sad.png", "angry.png", "veryAngry.png"]
+        let img = UIImage(named: images[answerInd])
         //self.buttonImage =
-        let img = UIImageView(image: self.buttonImage)
-        print("setAnswerImage called")
-        //let viewDictionary: [String: UIImage] = ["buttonlabel": self.buttonImage!]
-        self.addSubview(img)
+        self.buttonImage = UIImageView(image: img)
+        self.buttonImage!.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.buttonImage!)
         
+        let vertConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
+        let rightHorConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1.0, constant: 0.0)
+        let leftHorConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.LeadingMargin, multiplier: 1.0, constant: 0.0)
+        let widthConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 0.3, constant: 0.0)
+        //let heightConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 0.0, constant: 10.0)
+        let topConstraint = NSLayoutConstraint(item: self.buttonImage!, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0.0)
+        
+        
+        self.addConstraint(vertConstraint)
+        if leftJustify {
+            self.addConstraint(leftHorConstraint)
+        } else {
+            self.addConstraint(rightHorConstraint)
+        }
+        //self.addConstraint(horConstraint)
+        self.addConstraint(widthConstraint)
+        //self.addConstraint(heightConstraint)
+        self.addConstraint(topConstraint)
         
     }
     
