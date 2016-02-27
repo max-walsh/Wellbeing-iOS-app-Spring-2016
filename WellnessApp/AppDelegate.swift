@@ -138,9 +138,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currentHour = components.hour
         //print("Time: ", currentHour)
         
-        let surveyFetchStartTime = 0 //1//0//0
-        let surveyFetchEndTime = 23 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
-        
+        let surveyFetchStartTime = 17 //1//0//0
+        let surveyFetchEndTime = 20 //7//24//3    //*************************CHANGE THIS IF NEEDED ********************//
         //print("program will start fetching download")
         if(currentHour >= surveyFetchStartTime && currentHour <= surveyFetchEndTime-1){
             //print("started fetch")
@@ -178,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     //NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
                     //print("Posted special notification....")
-                    //TestThread.start()
+                    TestThread().start()
                     return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
                 })
             //})
@@ -261,7 +260,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     })
                 }
                 //NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
-                //TestThread.start()
+                TestThread().start()
                 return PFObject.pinAllInBackground(AllSurveys as? [AnyObject])
             //})
         })
