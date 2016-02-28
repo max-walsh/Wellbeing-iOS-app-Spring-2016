@@ -23,6 +23,7 @@ class homeTableViewController: UITableViewController {
     var selectedSurveyGroup = "forever"
     //var currentUser = PFUser.currentUser
     var reset = false
+    var missedSurveys = [String]()
 
     
     override func viewDidLoad() {
@@ -462,6 +463,7 @@ class homeTableViewController: UITableViewController {
                         }
                     } else{
                         surveysArray.append(survey)
+                        missedSurveys.append(survey.surveyName)
                     }
                 }
                 else if (surveyState == "future"){
@@ -499,6 +501,7 @@ class homeTableViewController: UITableViewController {
         //print(time)
         addDRTimeToParse(time)
     }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "surveySelected" {
             let nextView :SurveyTableViewController = segue.destinationViewController as! SurveyTableViewController
@@ -508,6 +511,10 @@ class homeTableViewController: UITableViewController {
                 nextView.currentSurvey = surveysArray[theSurveySelected]
             }
             
+        } else if segue.identifier == "summary" {
+            if let surveySummary = segue.destinationViewController as? SurveySummaryViewController {
+                surveySummary.missedSurveys = missedSurveys
+            }
         }
     }
 }

@@ -14,6 +14,9 @@ class SurveySummaryViewController: UIViewController {
     @IBOutlet weak var TotalToday: UILabel!
     @IBOutlet weak var SevenDayCompleted: UILabel!
     @IBOutlet weak var SevenDayTotal: UILabel!
+    
+    var missedSurveys = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +32,11 @@ class SurveySummaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let missSurveys = segue.destinationViewController as? MissedSurveyTableViewController {
+            missSurveys.surveys = missedSurveys
+        }
+    }
 
     /*
     // MARK: - Navigation

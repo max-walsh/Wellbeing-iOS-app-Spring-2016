@@ -72,6 +72,7 @@
 		F1C373E21C826EF6003E3EAB /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DD1C826EF6003E3EAB /* sad.png */; };
 		F1C373E31C826EF6003E3EAB /* veryAngry.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DE1C826EF6003E3EAB /* veryAngry.png */; };
 		F1C373E41C826EF6003E3EAB /* veryHappy.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DF1C826EF6003E3EAB /* veryHappy.png */; };
+		F1C373E61C8278E5003E3EAB /* MissedSurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		F1C373DD1C826EF6003E3EAB /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = ../../Downloads/sad.png; sourceTree = "<group>"; };
 		F1C373DE1C826EF6003E3EAB /* veryAngry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veryAngry.png; path = ../../Downloads/veryAngry.png; sourceTree = "<group>"; };
 		F1C373DF1C826EF6003E3EAB /* veryHappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veryHappy.png; path = ../../Downloads/veryHappy.png; sourceTree = "<group>"; };
+		F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissedSurveyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 			children = (
 				F17129051C7119B80037407C /* SurveySummary.swift */,
 				F17129071C71343F0037407C /* SurveySummaryViewController.swift */,
+				F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */,
 			);
 			name = SurveySummary;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95285CAA1AF5BE81001989B7 /* TLTiltSlider.m in Sources */,
+				F1C373E61C8278E5003E3EAB /* MissedSurveyTableViewController.swift in Sources */,
 				9559CE331AD9F86700DDE65B /* signinViewController.swift in Sources */,
 				42B426F51B4877F200CD42F5 /* SwiftUtils.swift in Sources */,
 				42BCA1141C02C09200E02FCA /* consentViewController.swift in Sources */,

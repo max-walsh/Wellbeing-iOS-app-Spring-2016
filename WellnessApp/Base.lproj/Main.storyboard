@@ -66,6 +66,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2P-N3-rpT">
+                                <rect key="frame" x="20" y="255" width="145" height="30"/>
+                                <state key="normal" title="View Missed Surveys"/>
+                                <connections>
+                                    <segue destination="ZZ9-RN-9t5" kind="show" id="3gi-al-Er3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -79,6 +86,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bac-g6-cMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1894" y="452"/>
+        </scene>
+        <!--Missed Survey Table View Controller-->
+        <scene sceneID="oyB-5W-E0T">
+            <objects>
+                <tableViewController id="ZZ9-RN-9t5" customClass="MissedSurveyTableViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bok-kA-x2b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="missedSurveyCell" id="bwf-FS-rEx">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwf-FS-rEx" id="PGM-sC-0WT">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le6-9n-NTd">
+                                            <rect key="frame" x="8" y="11" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZZ9-RN-9t5" id="AOe-hx-B8E"/>
+                            <outlet property="delegate" destination="ZZ9-RN-9t5" id="HVR-hh-cO9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBK-2O-i0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2579" y="452"/>
         </scene>
         <!--WellSense Main Menu-->
         <scene sceneID="JhH-Dx-ndU">
@@ -177,7 +220,7 @@
                     <navigationItem key="navigationItem" title="WellSense Main Menu" id="0hu-AB-jCF">
                         <barButtonItem key="leftBarButtonItem" title="Summary" id="gwY-0g-UBh">
                             <connections>
-                                <segue destination="bN7-5S-nTY" kind="show" id="R9l-qp-363"/>
+                                <segue destination="bN7-5S-nTY" kind="show" identifier="summary" id="R9l-qp-363"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="DR" id="Zjs-14-Umo">
