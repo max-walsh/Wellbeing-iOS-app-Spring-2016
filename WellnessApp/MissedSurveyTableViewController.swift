@@ -38,7 +38,7 @@ class MissedSurveyTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("\(surveys.count)")
+        print("missed survey count: \(surveys.count)")
         return surveys.count
     }
 
@@ -48,7 +48,7 @@ class MissedSurveyTableViewController: UITableViewController {
 
         // Configure the cell...
         if let survey = surveys[indexPath.row] as? String {
-            cell.textLabel?.text = survey
+            cell.textLabel!.text = survey
         }
         return cell
     }

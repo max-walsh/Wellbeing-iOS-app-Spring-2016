@@ -24,6 +24,7 @@ class homeTableViewController: UITableViewController {
     //var currentUser = PFUser.currentUser
     var reset = false
     var missedSurveys = [String]()
+    var surveyNameDictionary = [String: String]()
 
     
     override func viewDidLoad() {
@@ -108,6 +109,7 @@ class homeTableViewController: UITableViewController {
         surveysArray.removeAll(keepCapacity: false)
         foreverSurveysArray.removeAll(keepCapacity: false)
         otherSurveys.removeAll(keepCapacity: false)
+        missedSurveys.removeAll(keepCapacity: false)
         
         //initially this was active line
         //maketheobjectswithLocalDataStore()
@@ -378,12 +380,17 @@ class homeTableViewController: UITableViewController {
                             for (index, time) in surveyTimes.enumerate() {
                                 survey1 = survey()
                                 survey1!.surveyName = objects[surveyNumber]["Survey"] as! String
+                                //print("survey: \(survey1!.surveyName)")
+                                //self.surveyNameDictionary[survey1!.surveyName] = survey1!.surveyDescriptor
+                                //print("\n\n\n\n\n\n\n\n\n\n\nSurveyName: \(self.surveyNameDictionary[survey1!.surveyName])")
                                 survey1!.surveyDescriptor = objects[surveyNumber]["Category"] as! String
                                 survey1!.active = objects[surveyNumber]["Active"] as! Bool
                                 
                                 if survey1!.active{
                                     activeCount++
                                     print("survey active:\(survey1!.surveyDescriptor)")
+                                    self.surveyNameDictionary[survey1!.surveyName] = survey1!.surveyDescriptor
+                                    print("\n\n\n\n\n\n\n\n\n\n\nSurveyName: \(self.surveyNameDictionary[survey1!.surveyName])")
                                 } else{
                                     print("survey not active:\(survey1!.surveyDescriptor)")
                                     //continue
@@ -463,7 +470,10 @@ class homeTableViewController: UITableViewController {
                         }
                     } else{
                         surveysArray.append(survey)
-                        missedSurveys.append(survey.surveyName)
+                        //missedSurveys.append(survey.surveyName)
+                        missedSurveys.append(surveyNameDictionary[survey.surveyName]!)
+                        print("missed a surveydsdsafsadfadsfasdfasdfasdfasfasfasdfasfasdf")
+                        //missedSurveys.append(survey1!.surveyName = objects[surveyNumber]["Survey"] as! String)
                     }
                 }
                 else if (surveyState == "future"){
@@ -510,10 +520,12 @@ class homeTableViewController: UITableViewController {
             } else{
                 nextView.currentSurvey = surveysArray[theSurveySelected]
             }
+            missedSurveys.removeAll(keepCapacity: false)
             
         } else if segue.identifier == "summary" {
             if let surveySummary = segue.destinationViewController as? SurveySummaryViewController {
                 surveySummary.missedSurveys = missedSurveys
+                missedSurveys.removeAll(keepCapacity: false)
             }
         }
     }
