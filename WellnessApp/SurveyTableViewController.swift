@@ -122,6 +122,12 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         if currentSurvey.questions[section].answerType == "Button" {
             return currentSurvey.questions[section].answerOptions.count
         }
+        else if currentSurvey.questions[section].answerType == "ButtonImage" {
+            return currentSurvey.questions[section].answerOptions.count
+        }
+        else if currentSurvey.questions[section].answerType == "ButtonImageText" {
+            return currentSurvey.questions[section].answerOptions.count
+        }
         else if currentSurvey.questions[section].answerType == "Checkbox" {
             return currentSurvey.questions[section].answerOptions.count
             
@@ -233,11 +239,28 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             cell.tintColor = UIColor.blueColor()
             //print("here", terminator: "")
         }
-        
+        print("section: \(indexPath.section) row: \(indexPath.row)")
+        print(currentSurvey.questions[indexPath.section].answerOptions.count)
         if currentSurvey.questions[indexPath.section].answerType == "Button" {
+            print("Button \n\n\n\n\n")
             let cell = buttonTableViewCell()
             cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
             //test
+            //cell.setAnswerImage(indexPath.row, leftJustify: false)
+            setTheStateAtIndexPath(indexPath) // selects/ deselects the appropriate cells
+            return cell
+        }
+        else if currentSurvey.questions[indexPath.section].answerType == "ButtonImage" {
+            print("Button Image \n\n\n\n\n")
+            let cell = buttonTableViewCell()
+            cell.setAnswerImage(indexPath.row, leftJustify: true)
+            setTheStateAtIndexPath(indexPath)
+            return cell
+        }
+        else if currentSurvey.questions[indexPath.section].answerType == "ButtonImageText" {
+            print("Button Image Text \n\n\n\n\n")
+            let cell = buttonTableViewCell()
+            cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
             cell.setAnswerImage(indexPath.row, leftJustify: false)
             setTheStateAtIndexPath(indexPath) // selects/ deselects the appropriate cells
             return cell
@@ -273,6 +296,14 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             currentSurvey.questions[indexPath.section].answerIndex = -1
             currentSurvey.questions[indexPath.section].answer = [""]
         }
+        else if currentSurvey.questions[indexPath.section].answerType == "ButtonImage" {
+            currentSurvey.questions[indexPath.section].answerIndex = -1
+            currentSurvey.questions[indexPath.section].answer = [""]
+        }
+        else if currentSurvey.questions[indexPath.section].answerType == "ButtonImageText" {
+            currentSurvey.questions[indexPath.section].answerIndex = -1
+            currentSurvey.questions[indexPath.section].answer = [""]
+        }
 
     }
     
@@ -287,10 +318,38 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             
             //update the tableview values
             let visiblePaths :NSArray  = tableView.indexPathsForVisibleRows!
+            print("visiblepaths:\(visiblePaths.count)")
             for path in visiblePaths{
                 setTheStateAtIndexPath(path as! NSIndexPath)
             }
         }
+        else if currentSurvey.questions[indexPath.section].answerType == "ButtonImage" {
+            currentSurvey.questions[indexPath.section].answerIndex = indexPath.row
+            currentSurvey.questions[indexPath.section].answer[0] = "\(indexPath.row)"
+            
+            currentSurvey.questions[indexPath.section].unixTimeStamp = NSDate().timeIntervalSince1970 * 1000
+            
+            //update the tableview values
+            let visiblePaths :NSArray  = tableView.indexPathsForVisibleRows!
+            print("visiblepaths:\(visiblePaths.count)")
+            for path in visiblePaths{
+                setTheStateAtIndexPath(path as! NSIndexPath)
+            }
+        }
+        else if currentSurvey.questions[indexPath.section].answerType == "ButtonImageText" {
+            currentSurvey.questions[indexPath.section].answerIndex = indexPath.row
+            currentSurvey.questions[indexPath.section].answer[0] = "\(indexPath.row)"
+            
+            currentSurvey.questions[indexPath.section].unixTimeStamp = NSDate().timeIntervalSince1970 * 1000
+            
+            //update the tableview values
+            let visiblePaths :NSArray  = tableView.indexPathsForVisibleRows!
+            print("visiblepaths:\(visiblePaths.count)")
+            for path in visiblePaths{
+                setTheStateAtIndexPath(path as! NSIndexPath)
+            }
+        }
+            
         else if currentSurvey.questions[indexPath.section].answerType == "Textbox"{
             
             //			let cell = tableView.cellForRowAtIndexPath(indexPath) as! textResponseTableViewCell

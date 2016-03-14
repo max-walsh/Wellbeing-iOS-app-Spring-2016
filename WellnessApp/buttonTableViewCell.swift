@@ -46,6 +46,7 @@ class buttonTableViewCell: UITableViewCell {
         let img = UIImage(named: images[answerInd])
         //self.buttonImage =
         self.buttonImage = UIImageView(image: img)
+        let viewsDictionary: [String: UIImageView] = ["buttonLabel": self.buttonImage!]
         self.buttonImage!.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.buttonImage!)
         

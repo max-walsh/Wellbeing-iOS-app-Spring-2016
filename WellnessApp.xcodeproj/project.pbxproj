@@ -63,15 +63,15 @@
 		9562F58F1ADC0B6100BC28B2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9562F58E1ADC0B6100BC28B2 /* Media.xcassets */; };
 		95CAD5B51ADB6CCE008CC7A1 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD5B41ADB6CCE008CC7A1 /* time.swift */; };
 		95DF572E1ADBA065007D987C /* blackrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DF572C1ADBA065007D987C /* blackrest.png */; };
+		F13F1FE01C960E3600FC87AD /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FDF1C960E3600FC87AD /* angry.png */; };
+		F13F1FE21C960E4600FC87AD /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE11C960E4600FC87AD /* happy.png */; };
+		F13F1FE41C960E5300FC87AD /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE31C960E5300FC87AD /* sad.png */; };
+		F13F1FE61C960E5C00FC87AD /* veryAngry.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE51C960E5C00FC87AD /* veryAngry.png */; };
+		F13F1FE81C960E6400FC87AD /* veryHappy.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE71C960E6400FC87AD /* veryHappy.png */; };
 		F17129061C7119B80037407C /* SurveySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129051C7119B80037407C /* SurveySummary.swift */; };
 		F17129081C71343F0037407C /* SurveySummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129071C71343F0037407C /* SurveySummaryViewController.swift */; };
 		F171290A1C7147480037407C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129091C7147480037407C /* Queue.swift */; };
 		F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181747D1C68FEB8006431E7 /* TestThread.swift */; };
-		F1C373E01C826EF6003E3EAB /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DB1C826EF6003E3EAB /* angry.png */; };
-		F1C373E11C826EF6003E3EAB /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DC1C826EF6003E3EAB /* happy.png */; };
-		F1C373E21C826EF6003E3EAB /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DD1C826EF6003E3EAB /* sad.png */; };
-		F1C373E31C826EF6003E3EAB /* veryAngry.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DE1C826EF6003E3EAB /* veryAngry.png */; };
-		F1C373E41C826EF6003E3EAB /* veryHappy.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C373DF1C826EF6003E3EAB /* veryHappy.png */; };
 		F1C373E61C8278E5003E3EAB /* MissedSurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -150,15 +150,15 @@
 		95CAD5B41ADB6CCE008CC7A1 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = time.swift; path = ../time.swift; sourceTree = "<group>"; };
 		95DF572B1ADBA065007D987C /* well_beingicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = well_beingicon2.png; sourceTree = "<group>"; };
 		95DF572C1ADBA065007D987C /* blackrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackrest.png; sourceTree = "<group>"; };
+		F13F1FDF1C960E3600FC87AD /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry.png; sourceTree = "<group>"; };
+		F13F1FE11C960E4600FC87AD /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
+		F13F1FE31C960E5300FC87AD /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
+		F13F1FE51C960E5C00FC87AD /* veryAngry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryAngry.png; sourceTree = "<group>"; };
+		F13F1FE71C960E6400FC87AD /* veryHappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryHappy.png; sourceTree = "<group>"; };
 		F17129051C7119B80037407C /* SurveySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummary.swift; sourceTree = "<group>"; };
 		F17129071C71343F0037407C /* SurveySummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummaryViewController.swift; sourceTree = "<group>"; };
 		F17129091C7147480037407C /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		F181747D1C68FEB8006431E7 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
-		F1C373DB1C826EF6003E3EAB /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angry.png; path = ../../Downloads/angry.png; sourceTree = "<group>"; };
-		F1C373DC1C826EF6003E3EAB /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy.png; path = ../../Downloads/happy.png; sourceTree = "<group>"; };
-		F1C373DD1C826EF6003E3EAB /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = ../../Downloads/sad.png; sourceTree = "<group>"; };
-		F1C373DE1C826EF6003E3EAB /* veryAngry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veryAngry.png; path = ../../Downloads/veryAngry.png; sourceTree = "<group>"; };
-		F1C373DF1C826EF6003E3EAB /* veryHappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = veryHappy.png; path = ../../Downloads/veryHappy.png; sourceTree = "<group>"; };
 		F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissedSurveyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,11 +301,11 @@
 				954342F81AE4A9FF002945DE /* up.png */,
 				95DF572B1ADBA065007D987C /* well_beingicon2.png */,
 				954342F61AE4A9AD002945DE /* down.png */,
-				F1C373DB1C826EF6003E3EAB /* angry.png */,
-				F1C373DC1C826EF6003E3EAB /* happy.png */,
-				F1C373DD1C826EF6003E3EAB /* sad.png */,
-				F1C373DE1C826EF6003E3EAB /* veryAngry.png */,
-				F1C373DF1C826EF6003E3EAB /* veryHappy.png */,
+				F13F1FDF1C960E3600FC87AD /* angry.png */,
+				F13F1FE11C960E4600FC87AD /* happy.png */,
+				F13F1FE31C960E5300FC87AD /* sad.png */,
+				F13F1FE51C960E5C00FC87AD /* veryAngry.png */,
+				F13F1FE71C960E6400FC87AD /* veryHappy.png */,
 				956023621AEE122C00F94C77 /* generic.png */,
 				956023631AEE122C00F94C77 /* noBack.png */,
 				9559CE381ADA078D00DDE65B /* Faith.jpg */,
@@ -465,26 +465,26 @@
 				95285CAF1AF5BF15001989B7 /* trackBackground@2x.png in Resources */,
 				954342F91AE4A9FF002945DE /* up.png in Resources */,
 				9559CE421ADA078D00DDE65B /* wellness.jpg in Resources */,
-				F1C373E31C826EF6003E3EAB /* veryAngry.png in Resources */,
 				9559CE431ADA078D00DDE65B /* sleep.jpg in Resources */,
+				F13F1FE01C960E3600FC87AD /* angry.png in Resources */,
 				9559CE411ADA078D00DDE65B /* social-1.jpg in Resources */,
+				F13F1FE41C960E5300FC87AD /* sad.png in Resources */,
 				954342F71AE4A9AD002945DE /* down.png in Resources */,
-				F1C373E21C826EF6003E3EAB /* sad.png in Resources */,
 				95DF572E1ADBA065007D987C /* blackrest.png in Resources */,
 				9559CE3E1ADA078D00DDE65B /* Faith.jpg in Resources */,
 				9559CE3F1ADA078D00DDE65B /* mood.jpg in Resources */,
 				9560F1751AD99EA90085F9EA /* Main.storyboard in Resources */,
 				9560F17A1AD99EA90085F9EA /* LaunchScreen.xib in Resources */,
-				F1C373E41C826EF6003E3EAB /* veryHappy.png in Resources */,
+				F13F1FE21C960E4600FC87AD /* happy.png in Resources */,
+				F13F1FE81C960E6400FC87AD /* veryHappy.png in Resources */,
 				956023651AEE122C00F94C77 /* noBack.png in Resources */,
 				9560F1771AD99EA90085F9EA /* Images.xcassets in Resources */,
 				42B426F11B486C9E00CD42F5 /* user.plist in Resources */,
-				F1C373E01C826EF6003E3EAB /* angry.png in Resources */,
 				9562F58F1ADC0B6100BC28B2 /* Media.xcassets in Resources */,
 				95285CAE1AF5BF15001989B7 /* higlightedBarBackground@2x.png in Resources */,
 				9559CE401ADA078D00DDE65B /* Reconstruction.jpg in Resources */,
-				F1C373E11C826EF6003E3EAB /* happy.png in Resources */,
 				956023641AEE122C00F94C77 /* generic.png in Resources */,
+				F13F1FE61C960E5C00FC87AD /* veryAngry.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
