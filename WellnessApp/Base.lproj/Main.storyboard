@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3oM-gf-zwf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3oM-gf-zwf">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
+        <!--Recording View Controller-->
+        <scene sceneID="hS4-fC-qe1">
+            <objects>
+                <viewController id="JTW-Fb-tfj" customClass="RecordingViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nJe-Tn-Ixg"/>
+                        <viewControllerLayoutGuide type="bottom" id="AxC-de-Cn5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8qm-6x-Agh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE0-wU-RyJ">
+                                <rect key="frame" x="30" y="285" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="por-Yu-5as"/>
+                                </constraints>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="Record:" destination="JTW-Fb-tfj" eventType="touchUpInside" id="GXs-Vw-cUp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udq-hj-0Wb">
+                                <rect key="frame" x="99" y="285" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playSound:" destination="JTW-Fb-tfj" eventType="touchUpInside" id="X3B-tS-lyb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="udq-hj-0Wb" firstAttribute="leading" secondItem="qE0-wU-RyJ" secondAttribute="trailing" constant="20" id="aVn-gh-t83"/>
+                            <constraint firstItem="udq-hj-0Wb" firstAttribute="centerY" secondItem="8qm-6x-Agh" secondAttribute="centerY" id="nAm-UI-z6L"/>
+                            <constraint firstItem="qE0-wU-RyJ" firstAttribute="centerY" secondItem="8qm-6x-Agh" secondAttribute="centerY" id="pOK-ep-Dwp"/>
+                            <constraint firstItem="qE0-wU-RyJ" firstAttribute="leading" secondItem="8qm-6x-Agh" secondAttribute="leadingMargin" constant="10" id="w2T-GO-caU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="udq-hj-0Wb" id="KzB-Vc-p3a"/>
+                        <outlet property="recordButton" destination="qE0-wU-RyJ" id="iRw-Dp-ME8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CeQ-Fw-CnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="269"/>
+        </scene>
         <!--Survey Summary View Controller-->
         <scene sceneID="bHf-El-rsa">
             <objects>
@@ -223,11 +271,18 @@
                                 <segue destination="bN7-5S-nTY" kind="show" identifier="summary" id="R9l-qp-363"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="DR" id="Zjs-14-Umo">
-                            <connections>
-                                <action selector="transferToDRSite:" destination="Hb2-GA-4go" id="Ydc-ga-lzC"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="DR" id="Zjs-14-Umo">
+                                <connections>
+                                    <action selector="transferToDRSite:" destination="Hb2-GA-4go" id="Ydc-ga-lzC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Recording" id="NuX-3q-doT">
+                                <connections>
+                                    <segue destination="JTW-Fb-tfj" kind="show" identifier="Recording" id="x8t-Kt-M7b"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="summaryLabel" destination="gwY-0g-UBh" id="GQI-ee-bGN"/>

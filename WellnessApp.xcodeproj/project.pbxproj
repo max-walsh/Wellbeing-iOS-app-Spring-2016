@@ -68,6 +68,8 @@
 		F13F1FE41C960E5300FC87AD /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE31C960E5300FC87AD /* sad.png */; };
 		F13F1FE61C960E5C00FC87AD /* veryAngry.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE51C960E5C00FC87AD /* veryAngry.png */; };
 		F13F1FE81C960E6400FC87AD /* veryHappy.png in Resources */ = {isa = PBXBuildFile; fileRef = F13F1FE71C960E6400FC87AD /* veryHappy.png */; };
+		F13F1FEA1C99099F00FC87AD /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F1FE91C99099E00FC87AD /* Recording.swift */; };
+		F13F1FEC1C990C8C00FC87AD /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F1FEB1C990C8C00FC87AD /* RecordingViewController.swift */; };
 		F17129061C7119B80037407C /* SurveySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129051C7119B80037407C /* SurveySummary.swift */; };
 		F17129081C71343F0037407C /* SurveySummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129071C71343F0037407C /* SurveySummaryViewController.swift */; };
 		F171290A1C7147480037407C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129091C7147480037407C /* Queue.swift */; };
@@ -155,6 +157,8 @@
 		F13F1FE31C960E5300FC87AD /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
 		F13F1FE51C960E5C00FC87AD /* veryAngry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryAngry.png; sourceTree = "<group>"; };
 		F13F1FE71C960E6400FC87AD /* veryHappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryHappy.png; sourceTree = "<group>"; };
+		F13F1FE91C99099E00FC87AD /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recording.swift; path = ../Recording.swift; sourceTree = "<group>"; };
+		F13F1FEB1C990C8C00FC87AD /* RecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		F17129051C7119B80037407C /* SurveySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummary.swift; sourceTree = "<group>"; };
 		F17129071C71343F0037407C /* SurveySummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySummaryViewController.swift; sourceTree = "<group>"; };
 		F17129091C7147480037407C /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				F17129091C7147480037407C /* Queue.swift */,
 				F181747D1C68FEB8006431E7 /* TestThread.swift */,
 				9560F1731AD99EA90085F9EA /* Main.storyboard */,
+				F13F1FE91C99099E00FC87AD /* Recording.swift */,
+				F13F1FEB1C990C8C00FC87AD /* RecordingViewController.swift */,
 				9560F16D1AD99EA90085F9EA /* Supporting Files */,
 			);
 			path = WellnessApp;
@@ -512,6 +518,7 @@
 				F17129061C7119B80037407C /* SurveySummary.swift in Sources */,
 				95CAD5B51ADB6CCE008CC7A1 /* time.swift in Sources */,
 				9559CE451ADA090300DDE65B /* SurveyTableViewController.swift in Sources */,
+				F13F1FEC1C990C8C00FC87AD /* RecordingViewController.swift in Sources */,
 				42B426F31B4875B900CD42F5 /* SimpleLoginViewController.swift in Sources */,
 				9559CE491ADA197000DDE65B /* buttonTableViewCell.swift in Sources */,
 				9559CE471ADA183800DDE65B /* sliderTableViewCell.swift in Sources */,
@@ -527,6 +534,7 @@
 				F17129081C71343F0037407C /* SurveySummaryViewController.swift in Sources */,
 				9548A5A41AF5433F00189D28 /* IJReachability.swift in Sources */,
 				9559CE321AD9F86700DDE65B /* loginViewController.swift in Sources */,
+				F13F1FEA1C99099F00FC87AD /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
