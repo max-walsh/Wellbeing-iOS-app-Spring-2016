@@ -58,20 +58,34 @@ class RecordingViewController: UIViewController, AVAudioPlayerDelegate, AVAudioR
     }
     
     func getFileURL() -> NSURL {
+        var fileSize:UInt64 = 0
         //print("a")
         let path = getCacheDirectory().stringByAppendingString(fileName)
         //let path = getCacheDirectory().URLByAppendingPathComponent(fileName)
         //print("b")
         let filePath = NSURL(fileURLWithPath: path)
         //print("c")
+        do {
+            let attr : NSDictionary? = try NSFileManager.defaultManager().attributesOfItemAtPath(path)
+            if let _attr = attr {
+                fileSize = _attr.fileSize();
+                print("file size: \(fileSize)")
+            }
+        } catch {
+            NSLog("file size didnt work")
+        }
+
         return filePath
     }
     
     @IBAction func Record(sender: UIButton) {
         if sender.titleLabel?.text == "Record" {
-            soundRecorder.record()
+            //soundRecorder.record()
+            let audioDuration : NSTimeInterval = 60.0
+            soundRecorder.recordForDuration(audioDuration)
             sender.setTitle("Stop", forState: .Normal)
             playButton.enabled = false
+            
         } else {
             soundRecorder.stop()
             sender.setTitle("Record", forState: .Normal)
@@ -98,11 +112,13 @@ class RecordingViewController: UIViewController, AVAudioPlayerDelegate, AVAudioR
     func preparePlayer() {
         
         var error : NSError?
+        var fileSize : UInt64 = 0
         
         do {
             print("before soundplayer")
             print("\(getFileURL())")
             try soundPlayer = AVAudioPlayer(contentsOfURL: getFileURL())
+
             print("after soundplayer")
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
@@ -116,6 +132,7 @@ class RecordingViewController: UIViewController, AVAudioPlayerDelegate, AVAudioR
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         playButton.enabled = true
+        recordButton.setTitle("Record", forState: .Normal)
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
