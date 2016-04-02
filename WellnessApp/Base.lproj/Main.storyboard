@@ -68,7 +68,6 @@
                         <segue destination="dys-xw-g5X" kind="relationship" relationship="viewControllers" id="put-oO-p64"/>
                         <segue destination="JTW-Fb-tfj" kind="relationship" relationship="viewControllers" id="yyf-Yr-OKI"/>
                         <segue destination="gjG-Vf-qJy" kind="relationship" relationship="viewControllers" id="72C-Ap-dHw"/>
-                        <segue destination="3oM-gf-zwf" kind="relationship" relationship="viewControllers" id="d0x-DL-fjC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiX-xi-pyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -872,7 +871,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g9V-Hr-prk"/>
-        <segue reference="2oe-Ye-SId"/>
         <segue reference="yES-iI-4CI"/>
     </inferredMetricsTieBreakers>
 </document>
