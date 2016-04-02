@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3oM-gf-zwf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gNz-Sg-ayR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -7,7 +7,7 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Recording View Controller-->
+        <!--Audio Recording-->
         <scene sceneID="hS4-fC-qe1">
             <objects>
                 <viewController id="JTW-Fb-tfj" customClass="RecordingViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,6 +45,7 @@
                             <constraint firstItem="qE0-wU-RyJ" firstAttribute="leading" secondItem="8qm-6x-Agh" secondAttribute="leadingMargin" constant="10" id="w2T-GO-caU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Audio Recording" id="QvA-V8-20A"/>
                     <connections>
                         <outlet property="playButton" destination="udq-hj-0Wb" id="KzB-Vc-p3a"/>
                         <outlet property="recordButton" destination="qE0-wU-RyJ" id="iRw-Dp-ME8"/>
@@ -52,27 +53,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeQ-Fw-CnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="269"/>
+            <point key="canvasLocation" x="1846" y="697"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="CPJ-ng-Ukg">
+        <!--Tab Bar Controller-->
+        <scene sceneID="HFL-jT-3Av">
             <objects>
-                <viewController id="ibO-fd-iqS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="svW-bO-1Wk"/>
-                        <viewControllerLayoutGuide type="bottom" id="qXL-xf-EpP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eEM-We-49R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QI3-E4-TPO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="gNz-Sg-ayR" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="leD-3B-G0t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hb2-GA-4go" kind="relationship" relationship="viewControllers" id="9UN-o4-Jcq"/>
+                        <segue destination="JTW-Fb-tfj" kind="relationship" relationship="viewControllers" id="yyf-Yr-OKI"/>
+                        <segue destination="bN7-5S-nTY" kind="relationship" relationship="viewControllers" id="72C-Ap-dHw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YiX-xi-pyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="538"/>
+            <point key="canvasLocation" x="503" y="-49"/>
         </scene>
-        <!--Survey Summary View Controller-->
+        <!--Survey Summary-->
         <scene sceneID="bHf-El-rsa">
             <objects>
                 <viewController id="bN7-5S-nTY" customClass="SurveySummaryViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,6 +144,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Survey Summary" id="ZZq-O3-IHc"/>
                     <connections>
                         <outlet property="CompletedToday" destination="BX6-bc-cK4" id="hSI-XM-8H9"/>
                         <outlet property="SevenDayCompleted" destination="Ecz-PF-WfL" id="kuf-dD-inR"/>
@@ -151,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bac-g6-cMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="452"/>
+            <point key="canvasLocation" x="1710" y="-74"/>
         </scene>
         <!--Missed Survey Table View Controller-->
         <scene sceneID="oyB-5W-E0T">
@@ -163,7 +166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="missedSurveyCell" id="bwf-FS-rEx">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwf-FS-rEx" id="PGM-sC-0WT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -187,7 +190,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBK-2O-i0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2579" y="452"/>
+            <point key="canvasLocation" x="2449" y="-74"/>
         </scene>
         <!--WellSense Main Menu-->
         <scene sceneID="JhH-Dx-ndU">
@@ -199,7 +202,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="87" id="JJD-St-R66" customClass="homeTableViewCell" customModule="WellnessApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="87"/>
+                                <rect key="frame" x="0.0" y="42" width="600" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJD-St-R66" id="kNq-9J-0Hn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
@@ -255,7 +258,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="87" id="hRb-pv-pdb" customClass="CustomHeaderCell" customModule="WellnessApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="173" width="600" height="87"/>
+                                <rect key="frame" x="0.0" y="129" width="600" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="hRb-pv-pdb" id="xP3-N0-tIJ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
@@ -283,23 +286,16 @@
                             <outlet property="delegate" destination="Hb2-GA-4go" id="Dje-MQ-AjC"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Main Menu" id="s3o-Nb-x97"/>
                     <navigationItem key="navigationItem" title="WellSense Main Menu" id="0hu-AB-jCF">
-                        <barButtonItem key="leftBarButtonItem" title="Summary" id="gwY-0g-UBh">
-                            <connections>
-                                <segue destination="bN7-5S-nTY" kind="show" identifier="summary" id="R9l-qp-363"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Summary" id="gwY-0g-UBh"/>
                         <rightBarButtonItems>
                             <barButtonItem title="DR" id="Zjs-14-Umo">
                                 <connections>
                                     <action selector="transferToDRSite:" destination="Hb2-GA-4go" id="Ydc-ga-lzC"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Recording" id="NuX-3q-doT">
-                                <connections>
-                                    <segue destination="JTW-Fb-tfj" kind="show" identifier="Recording" id="x8t-Kt-M7b"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem title="Recording" id="NuX-3q-doT"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -316,7 +312,7 @@
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="Neg-iT-RtU" customClass="SurveyTableViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="10C-dh-p2s">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -468,7 +464,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcP-19-nmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="1238"/>
+            <point key="canvasLocation" x="-886" y="2024"/>
         </scene>
         <!--loginView-->
         <scene sceneID="Muz-ll-f2X">
@@ -552,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWb-Hm-gPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="1992"/>
+            <point key="canvasLocation" x="39" y="2954"/>
         </scene>
         <!--Signin View Controller-->
         <scene sceneID="FvH-tb-l21">
@@ -631,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDR-be-9CA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="2000"/>
+            <point key="canvasLocation" x="774" y="2962"/>
         </scene>
         <!--Simple Login View Controller-->
         <scene sceneID="ewa-fx-r86">
@@ -755,7 +751,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4x-TJ-f3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="2044"/>
+            <point key="canvasLocation" x="1560" y="3006"/>
         </scene>
         <!--Consent View Controller-->
         <scene sceneID="hLM-1p-wiU">
@@ -809,13 +805,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKM-CG-2as" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="1995"/>
+            <point key="canvasLocation" x="2364" y="3017"/>
         </scene>
-        <!--Item-->
+        <!--Main Menu-->
         <scene sceneID="CTP-Bq-pgM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3oM-gf-zwf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="r6J-wg-tRk"/>
+                    <tabBarItem key="tabBarItem" title="Main Menu" id="r6J-wg-tRk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ujO-tH-Bze">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -835,4 +831,7 @@
         <image name="down.png" width="72" height="72"/>
         <image name="up.png" width="72" height="72"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9UN-o4-Jcq"/>
+    </inferredMetricsTieBreakers>
 </document>
