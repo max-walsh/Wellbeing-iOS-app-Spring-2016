@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeQ-Fw-CnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="697"/>
+            <point key="canvasLocation" x="2388" y="465"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HFL-jT-3Av">
@@ -65,14 +65,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Hb2-GA-4go" kind="relationship" relationship="viewControllers" id="9UN-o4-Jcq"/>
+                        <segue destination="dys-xw-g5X" kind="relationship" relationship="viewControllers" id="put-oO-p64"/>
                         <segue destination="JTW-Fb-tfj" kind="relationship" relationship="viewControllers" id="yyf-Yr-OKI"/>
-                        <segue destination="bN7-5S-nTY" kind="relationship" relationship="viewControllers" id="72C-Ap-dHw"/>
+                        <segue destination="gjG-Vf-qJy" kind="relationship" relationship="viewControllers" id="72C-Ap-dHw"/>
+                        <segue destination="3oM-gf-zwf" kind="relationship" relationship="viewControllers" id="d0x-DL-fjC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiX-xi-pyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="-49"/>
+            <point key="canvasLocation" x="315" y="-49"/>
         </scene>
         <!--Survey Summary-->
         <scene sceneID="bHf-El-rsa">
@@ -144,7 +145,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Survey Summary" id="ZZq-O3-IHc"/>
+                    <navigationItem key="navigationItem" title="Survey Summary" id="E6U-eV-Emx"/>
                     <connections>
                         <outlet property="CompletedToday" destination="BX6-bc-cK4" id="hSI-XM-8H9"/>
                         <outlet property="SevenDayCompleted" destination="Ecz-PF-WfL" id="kuf-dD-inR"/>
@@ -154,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bac-g6-cMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="-74"/>
+            <point key="canvasLocation" x="2148" y="-760"/>
         </scene>
         <!--Missed Survey Table View Controller-->
         <scene sceneID="oyB-5W-E0T">
@@ -166,7 +167,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="missedSurveyCell" id="bwf-FS-rEx">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwf-FS-rEx" id="PGM-sC-0WT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -190,7 +191,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBK-2O-i0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2449" y="-74"/>
+            <point key="canvasLocation" x="2887" y="-760"/>
         </scene>
         <!--WellSense Main Menu-->
         <scene sceneID="JhH-Dx-ndU">
@@ -202,7 +203,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="87" id="JJD-St-R66" customClass="homeTableViewCell" customModule="WellnessApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="42" width="600" height="87"/>
+                                <rect key="frame" x="0.0" y="86" width="600" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJD-St-R66" id="kNq-9J-0Hn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
@@ -258,7 +259,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="87" id="hRb-pv-pdb" customClass="CustomHeaderCell" customModule="WellnessApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="129" width="600" height="87"/>
+                                <rect key="frame" x="0.0" y="173" width="600" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="hRb-pv-pdb" id="xP3-N0-tIJ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
@@ -305,14 +306,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRH-Ke-oxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="1228"/>
+            <point key="canvasLocation" x="1579" y="1228"/>
         </scene>
         <!--Survey Table View Controller-->
         <scene sceneID="IbA-sp-hfA">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="Neg-iT-RtU" customClass="SurveyTableViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="10C-dh-p2s">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -459,12 +460,12 @@
                     <connections>
                         <outlet property="down" destination="jsl-Tv-FgV" id="PJ1-gV-Yyt"/>
                         <outlet property="up" destination="2L2-mf-V9b" id="y8N-qp-tlV"/>
-                        <segue destination="3oM-gf-zwf" kind="show" identifier="backToAllSurveys" id="g9V-Hr-prk"/>
+                        <segue destination="dys-xw-g5X" kind="show" identifier="backToAllSurveys" id="g9V-Hr-prk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcP-19-nmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-886" y="2024"/>
+            <point key="canvasLocation" x="-37" y="2154"/>
         </scene>
         <!--loginView-->
         <scene sceneID="Muz-ll-f2X">
@@ -824,7 +825,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHO-dA-3Cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37" y="1228"/>
+            <point key="canvasLocation" x="775" y="1228"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="dZm-Ey-d5q">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BkL-uI-e8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController title="Main Menu" automaticallyAdjustsScrollViewInsets="NO" id="dys-xw-g5X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Zz2-xW-zIU"/>
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rYx-md-0bK">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3oM-gf-zwf" kind="relationship" relationship="viewControllers" id="2oe-Ye-SId"/>
+                        <segue destination="JTW-Fb-tfj" kind="relationship" relationship="viewControllers" id="yES-iI-4CI"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-47" y="838"/>
+        </scene>
+        <!--Survey Summary-->
+        <scene sceneID="s4z-40-tKH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjG-Vf-qJy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Survey Summary" id="ZZq-O3-IHc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dZN-vW-KHf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bN7-5S-nTY" kind="relationship" relationship="rootViewController" id="0IF-zF-g0b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffW-mz-HRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1336" y="-760"/>
         </scene>
     </scenes>
     <resources>
@@ -832,6 +871,8 @@
         <image name="up.png" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9UN-o4-Jcq"/>
+        <segue reference="g9V-Hr-prk"/>
+        <segue reference="2oe-Ye-SId"/>
+        <segue reference="yES-iI-4CI"/>
     </inferredMetricsTieBreakers>
 </document>
