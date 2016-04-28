@@ -63,6 +63,10 @@ class homeTableViewController: UITableViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("updateTheSurveys"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
+        
+        let toolbar = UIToolbar()
+        self.view.addSubview(toolbar)
+        
     }
     
     func enteredForeground(sender : AnyObject) {

@@ -10,10 +10,15 @@ import UIKit
 
 class homeTableViewCell: UITableViewCell {
 
-	@IBOutlet var timeLabel: UILabel!
-	@IBOutlet var surveyLabel: UILabel!
-	@IBOutlet var surveyProgressView: UIProgressView!
-	@IBOutlet var surveyDescriptionImageView: UIImageView!
+	//@IBOutlet var timeLabel: UILabel!
+	//@IBOutlet var surveyLabel: UILabel!
+	//@IBOutlet var surveyProgressView: UIProgressView!
+	//@IBOutlet var surveyDescriptionImageView: UIImageView!
+    //@IBOutlet weak var surveyDescriptionImageView: UIImageView!
+    @IBOutlet weak var surveyDescriptionImageView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var surveyLabel: UILabel!
+    @IBOutlet weak var surveyProgressView: UIProgressView!
 
 	enum surveyIdentifiers : String {
 		case mood = "Mood", spirit = "Spirituality", sleep = "Sleep",dayrecon = "Day Reconstruction", social = "Social Interaction", wellness = "Life", generic = "Other"

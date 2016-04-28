@@ -10,7 +10,8 @@ import UIKit
 
 class CustomHeaderCell: UITableViewCell {
 
-	@IBOutlet var headerLabel: UILabel!
+	//@IBOutlet var headerLabel: UILabel!
+    @IBOutlet weak var headerLabel: UILabel!
 	
     override func awakeFromNib() {
         super.awakeFromNib()

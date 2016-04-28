@@ -29,8 +29,8 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         // Sorts curent Survey
         currentSurvey.questions.sortInPlace({$0.questionID < $1.questionID})
         super.viewDidLoad()
-        up.imageInsets.left = self.tableView.frame.width/4
-        down.imageInsets.left = 3*self.tableView.frame.width/4
+        //up.imageInsets.left = self.tableView.frame.width/4
+        //down.imageInsets.left = 3*self.tableView.frame.width/4
         self.tableView.separatorColor = UIColor.blackColor()
         self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top)
         self.navigationController?.toolbarHidden = false

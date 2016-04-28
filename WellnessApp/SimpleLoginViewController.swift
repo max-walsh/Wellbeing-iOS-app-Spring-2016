@@ -34,7 +34,8 @@ class SimpleLoginViewController: UIViewController, UIPickerViewDataSource, UIPic
         // Swift2
         userEmail = textEmail.text!
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appdelegate.window?.rootViewController = (storyboard!.instantiateInitialViewController() as! UINavigationController)
+        //appdelegate.window?.rootViewController = (storyboard!.instantiateInitialViewController() as! UINavigationController)
+        appdelegate.window?.rootViewController = (storyboard!.instantiateInitialViewController() as! UITabBarController)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
