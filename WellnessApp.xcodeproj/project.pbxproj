@@ -75,6 +75,7 @@
 		F171290A1C7147480037407C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17129091C7147480037407C /* Queue.swift */; };
 		F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181747D1C68FEB8006431E7 /* TestThread.swift */; };
 		F1C373E61C8278E5003E3EAB /* MissedSurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */; };
+		F1E9FAA41CD296BC00E44821 /* surveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9FAA31CD296BC00E44821 /* surveyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		F17129091C7147480037407C /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		F181747D1C68FEB8006431E7 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
 		F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissedSurveyTableViewController.swift; sourceTree = "<group>"; };
+		F1E9FAA31CD296BC00E44821 /* surveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = surveyViewController.swift; path = WellnessApp/surveyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 		950639CB1AEEC9560054E37C /* Survey screen */ = {
 			isa = PBXGroup;
 			children = (
+				F1E9FAA31CD296BC00E44821 /* surveyViewController.swift */,
 				953291BE1AFDD15A008106F0 /* responses.swift */,
 				9559CE4A1ADA29F800DDE65B /* questionHeaderAnswerView.swift */,
 				9559CE461ADA183800DDE65B /* sliderTableViewCell.swift */,
@@ -522,6 +525,7 @@
 				42B426F31B4875B900CD42F5 /* SimpleLoginViewController.swift in Sources */,
 				9559CE491ADA197000DDE65B /* buttonTableViewCell.swift in Sources */,
 				9559CE471ADA183800DDE65B /* sliderTableViewCell.swift in Sources */,
+				F1E9FAA41CD296BC00E44821 /* surveyViewController.swift in Sources */,
 				956023671AEE191F00F94C77 /* CustomHeaderCell.swift in Sources */,
 				9560F1701AD99EA90085F9EA /* AppDelegate.swift in Sources */,
 				F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */,

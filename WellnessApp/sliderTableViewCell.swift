@@ -10,16 +10,20 @@ import UIKit
 
 class sliderTableViewCell: UITableViewCell{
 
-	var questionSlider = TLTiltSlider?()
-	var sliderLabel = UILabel?()
-	var minLabel = UILabel?()
-	var maxLabel = UILabel?()
+	//var questionSlider = TLTiltSlider?()
+	//var sliderLabel = UILabel?()
+	//var minLabel = UILabel?()
+	//var maxLabel = UILabel?()
 	var viewsDictionary = [String: UIView]()
 	let metrics = [ "margin" : 10 , "sliderSize" : 15, "labelSize" : 15, "betweenSliders": 10]
 	var sliderAnswers: [String]?
 	var sliderQuestion: question?
 	var lastEditedAt: NSDate?
 
+    @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var sliderLabel: UILabel!
+    @IBOutlet weak var questionSlider: UISlider!
 	
     override func awakeFromNib() {
         super.awakeFromNib()

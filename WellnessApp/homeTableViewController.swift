@@ -518,7 +518,8 @@ class homeTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "surveySelected" {
-            let nextView :SurveyTableViewController = segue.destinationViewController as! SurveyTableViewController
+            //let nextView :SurveyTableViewController = segue.destinationViewController as! SurveyTableViewController
+            let nextView:surveyViewController = segue.destinationViewController as! surveyViewController
             if selectedSurveyGroup == "forever"{
                 nextView.currentSurvey = foreverSurveysArray[theSurveySelected]
             } else{

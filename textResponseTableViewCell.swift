@@ -11,8 +11,9 @@
 class textResponseTableViewCell: UITableViewCell {
 
 	@IBOutlet var textResponse: UIView!
-	@IBOutlet var responseText: UITextField!
+	//@IBOutlet var responseText: UITextField!
 	
+    @IBOutlet weak var responseText: UITextField!
 
 	
 }

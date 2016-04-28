@@ -1,76 +1,101 @@
 //
-//  SurveyTableViewController.swift
+//  surveyViewController.swift
 //  WellnessApp
 //
-//  Created by Anna Jo McMahon on 4/11/15.
-//  Copyright (c) 2015 anna. All rights reserved.
+//  Created by Max Walsh on 4/28/16.
+//  Copyright © 2016 anna. All rights reserved.
 //
 
 import UIKit
 import Parse
 import SystemConfiguration
-let myUpdateTableKey = "com.amcmaho4.updateKey"
+// myUpdateTableKey is declared in SurveyTableViewController.swift
+//let myUpdateTableKey = "com.amcmaho4.updateKey"
 
-// original
-//class SurveyTableViewController: UITableViewController, UIScrollViewDelegate, UITextFieldDelegate {
-// Swift2
-class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
+class surveyViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+
     var currentSurvey : survey = survey()
     var completed = false
-    @IBOutlet var nextbutton: UIBarButtonItem!
     
+    @IBOutlet weak var surveyTableView: UITableView!
+
+    @IBOutlet weak var surveyNavigationBar: UINavigationBar!
     
-    @IBOutlet var up: UIBarButtonItem!
-    
-    @IBOutlet var down: UIBarButtonItem!
     var tap:UITapGestureRecognizer = UITapGestureRecognizer()
     
     override func viewDidLoad() {
-        // Sorts curent Survey
-        currentSurvey.questions.sortInPlace({$0.questionID < $1.questionID})
         super.viewDidLoad()
-        //up.imageInsets.left = self.tableView.frame.width/4
-        //down.imageInsets.left = 3*self.tableView.frame.width/4
-        self.tableView.separatorColor = UIColor.blackColor()
-        self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top)
-        //self.navigationController?.toolbarHidden = false
-        tableView!.rowHeight = UITableViewAutomaticDimension
-        tableView!.estimatedRowHeight = 80
-        tableView!.sectionHeaderHeight = 100.0
-        let dummyViewHeight:CGFloat = 100.0;
-        let dummyFrame = CGRectMake(0, 0, self.tableView!.bounds.size.width, dummyViewHeight);
-        let dummyView = UIView(frame : dummyFrame)
-        self.tableView!.tableHeaderView = dummyView;
-        self.tableView!.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0);
-        self.tableView!.allowsMultipleSelection = true
+        // Do any additional setup after loading the view.
+        surveyNavigationBar.topItem?.title = currentSurvey.surveyDescriptor
         
-        // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
+        // Sorts current survey
+        currentSurvey.questions.sortInPlace({$0.questionID < $1.questionID})
         
-        //print("load the individual survey  view controller", terminator: "")
-        completed = false
+        surveyTableView.separatorColor = UIColor.blackColor()
+        surveyTableView.contentOffset = CGPointMake(0, 0-surveyTableView.contentInset.top)
+        surveyTableView.rowHeight = UITableViewAutomaticDimension
+        surveyTableView.estimatedRowHeight = 80
+        surveyTableView.sectionHeaderHeight = 100.0
+        let dummyViewHeight:CGFloat = 100.0
+        let dummyFrame = CGRectMake(0, 0, surveyTableView.bounds.size.width, dummyViewHeight)
+        let dummyView = UIView(frame: dummyFrame)
+        surveyTableView.tableHeaderView = dummyView
+        surveyTableView.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0)
+        surveyTableView.allowsMultipleSelection = true
         
         
         
         tap = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        tableView.addGestureRecognizer(tap)
+        surveyTableView.addGestureRecognizer(tap)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "listenForTap", name: UIKeyboardDidShowNotification, object: nil)
         tap.enabled = false
         
         
-        
+        print("surveyViewDidLoad")
+        print("\(currentSurvey.questions.count)")
     }
-    func listenForTap(){
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func listenForTap() {
         tap.enabled = true
     }
-    func DismissKeyboard() {
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func submitButton(sender: AnyObject) {
+        //DismissKeyboard()
+        // check if all the questions have been answered
+        updateVisibleSliderCells()
+        if(currentSurvey.getProgress() != 1){
+            createNotDoneAlertView(currentSurvey.getAnswered())
+        }
+        else{
+            updateParseDataStore()
+            currentSurvey.completed = true
+            currentSurvey.surveyCompletedTime = NSDate()
+            //var notifCount = currentSurvey.notifications.count
+            currentSurvey.cancelNotifications()
+            currentSurvey.makeNSdate(true)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            dismissViewControllerAnimated(true, completion: nil)
+        }
         
-        tableView.endEditing(true)
+    }
+    
+    func DismissKeyboard() {
+        surveyTableView.endEditing(true)
         tap.enabled = false
-        let visiblePaths :NSArray  = tableView.indexPathsForVisibleRows!
+        let visiblePaths: NSArray = surveyTableView.indexPathsForVisibleRows!
         for path in visiblePaths {
-            if let cell = tableView.cellForRowAtIndexPath(path as! NSIndexPath) as? textResponseTableViewCell {
+            if let cell = surveyTableView.cellForRowAtIndexPath(path as! NSIndexPath) as? textResponseTableViewCell {
                 // Original
                 //currentSurvey.questions[path.section].answer[0] = cell.responseText.text
                 // Swift2
@@ -85,7 +110,6 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
                 }
                 //currentSurvey.questions[path.section].answer[0] = "test text"
                 //cell.responseText.text
-                
             }
         }
     }
@@ -95,15 +119,11 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         return false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillDisappear(animated: Bool) {
         //updateParseDataStore()
         //println("leaving the individual survey  view controller")
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         /*
@@ -117,12 +137,13 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return currentSurvey.questions.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentSurvey.questions[section].answerType == "Button" {
             return currentSurvey.questions[section].answerOptions.count
         }
@@ -141,24 +162,24 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let currentQuestionString = currentSurvey.questions[section].questionString as String
         
         
-        let headerView = questionHeaderAnswerView(frame: CGRectMake(10, 10, self.tableView.bounds.width, tableView.sectionHeaderHeight), questionString: currentQuestionString)//
+        let headerView = questionHeaderAnswerView(frame: CGRectMake(10, 10, surveyTableView.bounds.width, tableView.sectionHeaderHeight), questionString: currentQuestionString)//
         headerView.displayView()
         return headerView
     }
-    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         updateVisibleSliderCells()
     }
     
     
     func updateVisibleSliderCells(){
-        let visiblePaths :NSArray  = tableView.indexPathsForVisibleRows!
+        let visiblePaths :NSArray  = surveyTableView.indexPathsForVisibleRows!
         for path in visiblePaths {
-            if let cell = tableView.cellForRowAtIndexPath(path as! NSIndexPath) as? sliderTableViewCell {
+            if let cell = surveyTableView.cellForRowAtIndexPath(path as! NSIndexPath) as? sliderTableViewCell {
                 if let time = cell.lastEditedAt as NSDate?{
                     currentSurvey.questions[path.section].answerIndex = Int(cell.questionSlider!.value)
                     currentSurvey.questions[path.section].answer[0] = "\(Int(cell.questionSlider!.value))"
@@ -170,73 +191,8 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         
     }
     
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    @IBAction func pressed(sender: AnyObject) {
-        //print("bar button action", terminator: "")
-        
-        // Original
-        //var last = tableView.indexPathsForVisibleRows!.last as! NSIndexPath
-        // Swift2
-        let last = tableView.indexPathsForVisibleRows!.last!
-        
-        var lastSection = (tableView.indexPathsForVisibleRows?.last!.section)!
-        
-        if lastSection-1 >= 0{
-            // because if only part of a section is showing you want to continue to show it
-            lastSection -= 1
-        }
-        let firstSection = (tableView.indexPathsForVisibleRows?.first!.section)!
-        let lastSectionNumberOfRows = tableView.numberOfRowsInSection(lastSection+1)
-        
-        let rect: CGRect = self.tableView.bounds;
-        var distanceToScroll:CGFloat = 0;
-        
-        if tableView.numberOfSections == lastSection+2 {
-            let cellIndexToScroll = NSIndexPath(forRow: lastSectionNumberOfRows-1 , inSection: tableView.numberOfSections-1)
-            self.tableView.scrollToRowAtIndexPath(cellIndexToScroll, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-            
-        }
-            
-        else{
-            //var lastRect = tableView.rectForRowAtIndexPath(last)
-            
-            for (var i=firstSection; i<=lastSection ; i++){
-                distanceToScroll += tableView.rectForSection(i).height
-                
-            }
-            let scrollToRect: CGRect = CGRectOffset(rect, 0, distanceToScroll);
-            self.tableView.scrollRectToVisible(scrollToRect, animated: true)
-        }
-        
-        
-        
-    }
-    @IBAction func backbutton(sender: AnyObject) {
-        //print("bar button action", terminator: "")
-        let last: AnyObject = tableView.indexPathsForVisibleRows!.last!
-        
-        var lastSection = (tableView.indexPathsForVisibleRows?.last!.section)!
-        if lastSection-1 >= 0{
-            lastSection -= 1
-        }
-        
-        //var lastt = tableView.indexPathsForVisibleRows().last
-        
-        let firstSection = (tableView.indexPathsForVisibleRows?.first!.section)!
-        //var lastSectionNumberOfRows = tableView.numberOfRowsInSection(lastSection)
-        
-        let rect: CGRect = self.tableView.bounds;
-        //var lastRect = tableView.rectForRowAtIndexPath(last as! NSIndexPath)
-        var distanceToScroll:CGFloat = 0;
-        for (var i=firstSection; i<=lastSection ; i++){
-            distanceToScroll += tableView.rectForSection(i).height
-            let scrollToRect: CGRect = CGRectOffset(rect, 0, -distanceToScroll);
-            self.tableView.scrollRectToVisible(scrollToRect, animated: true)
-        }
-    }
-    
-       //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("cell for row at index path")
         //var reuseIdentifier = "cell"
         if(indexPath.section>currentSurvey.questions.count || indexPath.row>currentSurvey.questions[indexPath.section].answerOptions.count){
             let cell = UITableViewCell()
@@ -295,7 +251,7 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if currentSurvey.questions[indexPath.section].answerType == "Button" {
             currentSurvey.questions[indexPath.section].answerIndex = -1
             currentSurvey.questions[indexPath.section].answer = [""]
@@ -308,16 +264,14 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             currentSurvey.questions[indexPath.section].answerIndex = -1
             currentSurvey.questions[indexPath.section].answer = [""]
         }
-
+        
     }
     
-    //override func tableView(tableView: UITableView,
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if currentSurvey.questions[indexPath.section].answerType == "Button" {
             currentSurvey.questions[indexPath.section].answerIndex = indexPath.row
             currentSurvey.questions[indexPath.section].answer[0] = "\(indexPath.row)"
-
+            
             currentSurvey.questions[indexPath.section].unixTimeStamp = NSDate().timeIntervalSince1970 * 1000
             
             //update the tableview values
@@ -427,18 +381,18 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
     
     func setTheStateAtIndexPath(path: NSIndexPath){
         if(currentSurvey.questions[path.section].answerIndex != -1 && currentSurvey.questions[path.section].answerIndex == path.row){
-            tableView.selectRowAtIndexPath(path, animated: false, scrollPosition: UITableViewScrollPosition.None)
+            surveyTableView.selectRowAtIndexPath(path, animated: false, scrollPosition: UITableViewScrollPosition.None)
         }
         else if currentSurvey.questions[path.section].answer.contains("\(path.row)"){
-            tableView.selectRowAtIndexPath(path, animated: false, scrollPosition: UITableViewScrollPosition.None)
+            surveyTableView.selectRowAtIndexPath(path, animated: false, scrollPosition: UITableViewScrollPosition.None)
         }
         else{
-            tableView.deselectRowAtIndexPath(path, animated: false)
-
+            surveyTableView.deselectRowAtIndexPath(path, animated: false)
+            
         }
     }
     
-
+    
     
     func setTheStateAtIndexPathCheck(path: NSIndexPath){
         
@@ -446,43 +400,22 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         
         
         if(currentSurvey.questions[path.section].answerIndex != -1 && currentSurvey.questions[path.section].answerIndex == path.row){
-            tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
+            surveyTableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
             //print("should select checkmark \(path.row)")
         }
         else if currentSurvey.questions[path.section].answer.contains("\(path.row)"){
-            tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
+            surveyTableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
             //print("should select checkmark 2nd way \(path.row)")
         }
         else{
-            tableView.cellForRowAtIndexPath(path)?.accessoryType = .None
+            surveyTableView.cellForRowAtIndexPath(path)?.accessoryType = .None
             //print("should select none \(path.row)")
         }
     }
     
     
-    
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    @IBAction func SubmitButtonAction(sender: UIButton){
+    func createNotDoneAlertView(answered: CGFloat) {
         
-        //DismissKeyboard()
-        // check if all the questions have been answered
-        updateVisibleSliderCells()
-        if(currentSurvey.getProgress() != 1){
-            createNotDoneAlertView(currentSurvey.getAnswered())
-        }
-        else{
-            updateParseDataStore()
-            currentSurvey.completed = true
-            currentSurvey.surveyCompletedTime = NSDate()
-            //var notifCount = currentSurvey.notifications.count
-            currentSurvey.cancelNotifications()
-            currentSurvey.makeNSdate(true)
-            self.navigationController?.popToRootViewControllerAnimated(true)
-        }
-    }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    func createNotDoneAlertView(answered: CGFloat){
         let createAccountErrorAlert: UIAlertView = UIAlertView()
         createAccountErrorAlert.delegate = self
         //createAccountErrorAlert.title = "Are you sure would like to submit?"
@@ -502,7 +435,9 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         //createAccountErrorAlert.addButtonWithTitle("Submit")
         //createAccountErrorAlert.addButtonWithTitle("Continue Working")
         createAccountErrorAlert.show()
+        
     }
+    
     
     func updateParseDataStore(){
         for questionN in currentSurvey.questions{
@@ -564,16 +499,20 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
         footerView.backgroundColor = UIColor.blackColor()
         
         return footerView
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5.0
     }
+    
+    
     //send the entire
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "backToHomeScreen" {
@@ -582,7 +521,9 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         }
         
     }
+    
     override func didMoveToParentViewController(parent: UIViewController?){
+        print("movetoparent calle")
         if let parent = parent as? homeTableViewController{
             if completed{
                 parent.completedSurveys.append(currentSurvey)
@@ -598,12 +539,12 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
         /*
         switch buttonIndex {
         default:
-            println("alertView \(buttonIndex) clicked")
-            if(Int(currentSurvey.getAnswered())==0){
-                println("You didn't answer any question")
-            }else{
-                println("You have answered \( Int(currentSurvey.getAnswered())) out of \(currentSurvey.questions.count) questions")
-            }
+        println("alertView \(buttonIndex) clicked")
+        if(Int(currentSurvey.getAnswered())==0){
+        println("You didn't answer any question")
+        }else{
+        println("You have answered \( Int(currentSurvey.getAnswered())) out of \(currentSurvey.questions.count) questions")
+        }
         }
         */
         //print("alertView \(buttonIndex) clicked")
@@ -621,6 +562,8 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
                 //	NSNotificationCenter.defaultCenter().postNotificationName(myUpdateTableKey, object: self)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 summary.DailyComplete++
+                dismissViewControllerAnimated(true, completion: nil)
+                print("incomplete survey sent")
             }
             /*
             currentSurvey.surveyCompletedTime = NSDate()
@@ -640,8 +583,18 @@ class SurveyTableViewController: UITableViewController, UITextFieldDelegate {
             NSLog("Default");
             break;
         }
-
+        
     }
     
     
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
