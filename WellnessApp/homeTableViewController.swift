@@ -507,7 +507,7 @@ class homeTableViewController: UITableViewController {
         tup["unixTimeStamp"] = timestamp
         tup.saveInBackground()
     }
-    
+    /*
     @IBAction func transferToDRSite(sender: AnyObject) {
         let drURL = NSURL(string: "http://nd.qualtrics.com/SE/?SID=SV_4SFJmGoj5rpt5u5")
         UIApplication.sharedApplication().openURL(drURL!)
@@ -515,7 +515,15 @@ class homeTableViewController: UITableViewController {
         //print(time)
         addDRTimeToParse(time)
     }
-
+*/
+    @IBAction func transferToDRSite(sender: AnyObject) {
+        let drURL = NSURL(string: "http://nd.qualtrics.com/SE/?SID=SV_4SFJmGoj5rpt5u5")
+        UIApplication.sharedApplication().openURL(drURL!)
+        let time = NSDate().timeIntervalSince1970 * 1000 // Mirrors timestamp format in SurveyTableViewController
+        print(time)
+        addDRTimeToParse(time)
+        
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "surveySelected" {
             //let nextView :SurveyTableViewController = segue.destinationViewController as! SurveyTableViewController

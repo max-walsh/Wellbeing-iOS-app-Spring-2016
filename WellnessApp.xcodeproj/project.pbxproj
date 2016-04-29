@@ -76,6 +76,7 @@
 		F181747E1C68FEB8006431E7 /* TestThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181747D1C68FEB8006431E7 /* TestThread.swift */; };
 		F1C373E61C8278E5003E3EAB /* MissedSurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */; };
 		F1E9FAA41CD296BC00E44821 /* surveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9FAA31CD296BC00E44821 /* surveyViewController.swift */; };
+		F1F8A65D1CD2DE4B0018AADC /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = F1F8A65C1CD2DE4B0018AADC /* Home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,7 @@
 		F181747D1C68FEB8006431E7 /* TestThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestThread.swift; sourceTree = "<group>"; };
 		F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissedSurveyTableViewController.swift; sourceTree = "<group>"; };
 		F1E9FAA31CD296BC00E44821 /* surveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = surveyViewController.swift; path = WellnessApp/surveyViewController.swift; sourceTree = "<group>"; };
+		F1F8A65C1CD2DE4B0018AADC /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Home.png; path = ../../Downloads/Home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 				954342F61AE4A9AD002945DE /* down.png */,
 				F13F1FDF1C960E3600FC87AD /* angry.png */,
 				F13F1FE11C960E4600FC87AD /* happy.png */,
+				F1F8A65C1CD2DE4B0018AADC /* Home.png */,
 				F13F1FE31C960E5300FC87AD /* sad.png */,
 				F13F1FE51C960E5C00FC87AD /* veryAngry.png */,
 				F13F1FE71C960E6400FC87AD /* veryHappy.png */,
@@ -483,6 +486,7 @@
 				9559CE3E1ADA078D00DDE65B /* Faith.jpg in Resources */,
 				9559CE3F1ADA078D00DDE65B /* mood.jpg in Resources */,
 				9560F1751AD99EA90085F9EA /* Main.storyboard in Resources */,
+				F1F8A65D1CD2DE4B0018AADC /* Home.png in Resources */,
 				9560F17A1AD99EA90085F9EA /* LaunchScreen.xib in Resources */,
 				F13F1FE21C960E4600FC87AD /* happy.png in Resources */,
 				F13F1FE81C960E6400FC87AD /* veryHappy.png in Resources */,
