@@ -202,7 +202,7 @@ class surveyViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         print("section: \(indexPath.section) row: \(indexPath.row)")
         print(currentSurvey.questions[indexPath.section].answerOptions.count)
         if currentSurvey.questions[indexPath.section].answerType == "Button" {
-            print("Button \n\n\n\n\n")
+            //print("Button \n\n\n\n\n")
             let cell = buttonTableViewCell()
             cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
             //test
@@ -211,14 +211,14 @@ class surveyViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             return cell
         }
         else if currentSurvey.questions[indexPath.section].answerType == "ButtonImage" {
-            print("Button Image \n\n\n\n\n")
+            //print("Button Image \n\n\n\n\n")
             let cell = buttonTableViewCell()
             cell.setAnswerImage(indexPath.row, leftJustify: true)
             setTheStateAtIndexPath(indexPath)
             return cell
         }
         else if currentSurvey.questions[indexPath.section].answerType == "ButtonImageText" {
-            print("Button Image Text \n\n\n\n\n")
+            //print("Button Image Text \n\n\n\n\n")
             let cell = buttonTableViewCell()
             cell.setAnswer(currentSurvey.questions[indexPath.section].answerOptions, answerInd: indexPath.row)
             cell.setAnswerImage(indexPath.row, leftJustify: false)

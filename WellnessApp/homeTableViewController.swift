@@ -29,7 +29,7 @@ class homeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hidesBottomBarWhenPushed = true;
+        self.hidesBottomBarWhenPushed = false
         //maketheobjectswithLocalDataStore()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "maketheobjectswithLocalDataStore", name: mySpecialNotificationKey, object: nil)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "emptyTheArrays", name: updateKey, object: nil)
@@ -64,8 +64,6 @@ class homeTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: Selector("updateTheSurveys"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
-        let toolbar = UIToolbar()
-        self.view.addSubview(toolbar)
         
     }
     
@@ -76,10 +74,12 @@ class homeTableViewController: UITableViewController {
         self.tableView.setNeedsDisplay()
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         updateTheSurveys()
+        print("viewWillAppear")
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -394,9 +394,9 @@ class homeTableViewController: UITableViewController {
                                     activeCount++
                                     print("survey active:\(survey1!.surveyDescriptor)")
                                     self.surveyNameDictionary[survey1!.surveyName] = survey1!.surveyDescriptor
-                                    print("\n\n\n\n\n\n\n\n\n\n\nSurveyName: \(self.surveyNameDictionary[survey1!.surveyName])")
+                                    //print("\n\n\n\n\n\n\n\n\n\n\nSurveyName: \(self.surveyNameDictionary[survey1!.surveyName])")
                                 } else{
-                                    print("survey not active:\(survey1!.surveyDescriptor)")
+                                    //print("survey not active:\(survey1!.surveyDescriptor)")
                                     //continue
                                 }
                                 
