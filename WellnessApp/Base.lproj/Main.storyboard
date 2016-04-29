@@ -829,7 +829,6 @@
         <!--Main Menu-->
         <scene sceneID="dZm-Ey-d5q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BkL-uI-e8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController title="Main Menu" automaticallyAdjustsScrollViewInsets="NO" id="dys-xw-g5X" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Zz2-xW-zIU"/>
                     <toolbarItems/>
@@ -842,6 +841,7 @@
                         <segue destination="JTW-Fb-tfj" kind="relationship" relationship="viewControllers" id="yES-iI-4CI"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BkL-uI-e8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-47" y="838"/>
         </scene>
