@@ -35,6 +35,7 @@ class homeTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "maketheobjectswithLocalDataStore", name: mySpecialNotificationKey, object: nil)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "emptyTheArrays", name: updateKey, object: nil)
         summary.DailyComplete = completedSurveys.count
+        print("compelted surveys count: \(completedSurveys.count)")
         /*
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
@@ -454,10 +455,12 @@ class homeTableViewController: UITableViewController {
         self.pastSurveyArrays.removeAll(keepCapacity: false)
         self.pastSurveyArrays = completedSurveys
         self.foreverSurveysArray.removeAll(keepCapacity: false)
-        
+        var i:Int = 0
         // check the time of each survey created to decide which section it should go in, past , present, or future
         for survey in self.AllSurveys{
-            
+            print("survey \(i): \(survey.surveyDescriptor) state: \(survey.pastPresentFutureOrForever()) completed: \(survey.completed)")
+
+            i += 1
             if survey.active{
                 let surveyState = survey.pastPresentFutureOrForever()
                 if(surveyState == "forever"){
@@ -486,8 +489,10 @@ class homeTableViewController: UITableViewController {
                 }
                 else if (surveyState == "past"){
                     if (survey.completed == false) {
-                        missedSurveys.append(surveyNameDictionary[survey.surveyName]!)
-                        print("missed a survey: \(surveyNameDictionary[survey.surveyName]!): \(survey.surveyExpirationTimeNiceFormat)")
+                        missedSurveys.append(survey.surveyDescriptor)
+                        print("missed a survey: \(survey.surveyDescriptor): \(survey.surveyExpirationTimeNiceFormat)")
+                    } else {
+                        print("not missed: \(survey.surveyDescriptor)")
                     }
                     pastSurveyArrays.append(survey)
                 }
