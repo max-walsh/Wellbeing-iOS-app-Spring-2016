@@ -5,6 +5,7 @@ import UIKit
 import Parse
 import SystemConfiguration
 
+var missedSurveys: [String] = [String]()
 class homeTableViewController: UITableViewController {
     
     @IBOutlet weak var summaryLabel: UIBarButtonItem!
@@ -23,7 +24,7 @@ class homeTableViewController: UITableViewController {
     var selectedSurveyGroup = "forever"
     //var currentUser = PFUser.currentUser
     var reset = false
-    var missedSurveys = [String]()
+    //var missedSurveys = [String]()
     var surveyNameDictionary = [String: String]()
 
     
@@ -392,7 +393,7 @@ class homeTableViewController: UITableViewController {
                                 
                                 if survey1!.active{
                                     activeCount++
-                                    print("survey active:\(survey1!.surveyDescriptor)")
+                                    print("survey active:\(survey1!.surveyDescriptor): \(survey1!.surveyExpirationTimeNiceFormat)")
                                     self.surveyNameDictionary[survey1!.surveyName] = survey1!.surveyDescriptor
                                     //print("\n\n\n\n\n\n\n\n\n\n\nSurveyName: \(self.surveyNameDictionary[survey1!.surveyName])")
                                 } else{
@@ -432,9 +433,9 @@ class homeTableViewController: UITableViewController {
         
     }
     
+    
+    
     func updateTheSurveys(){
-
-        
         if !(surveysArray.isEmpty && futureSurveysArray.isEmpty && pastSurveyArrays.isEmpty && foreverSurveysArray.isEmpty){
             AllSurveys = surveysArray + pastSurveyArrays + futureSurveysArray + foreverSurveysArray
             
@@ -475,8 +476,8 @@ class homeTableViewController: UITableViewController {
                     } else{
                         surveysArray.append(survey)
                         //missedSurveys.append(survey.surveyName)
-                        missedSurveys.append(surveyNameDictionary[survey.surveyName]!)
-                        print("missed a surveydsdsafsadfadsfasdfasdfasdfasfasfasdfasfasdf")
+                        //missedSurveys.append(surveyNameDictionary[survey.surveyName]!)
+                        print("missed a surveydsdsafsadfadsfasdfasdfasdfasfasfasdfasfasdf: \(surveyNameDictionary[survey.surveyName]!)")
                         //missedSurveys.append(survey1!.surveyName = objects[surveyNumber]["Survey"] as! String)
                     }
                 }
@@ -484,6 +485,10 @@ class homeTableViewController: UITableViewController {
                     futureSurveysArray.append(survey)
                 }
                 else if (surveyState == "past"){
+                    if (survey.completed == false) {
+                        missedSurveys.append(surveyNameDictionary[survey.surveyName]!)
+                        print("missed a survey: \(surveyNameDictionary[survey.surveyName]!): \(survey.surveyExpirationTimeNiceFormat)")
+                    }
                     pastSurveyArrays.append(survey)
                 }
                 else if (surveyState == "none"){

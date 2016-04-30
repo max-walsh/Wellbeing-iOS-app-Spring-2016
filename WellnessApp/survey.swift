@@ -105,14 +105,14 @@ class survey {
         
     }
     func pastPresentFutureOrForever()->String{
-        print("survey name:\(surveyName), survey days:\(sendDays)")
+        //print("survey name:\(surveyName), survey days:\(sendDays)")
         if(self.active == true){
             if(self.sendDays[0] == 11){
                 return "forever"
             }
             if self.sendDays.contains(SwiftUtils.getDayOfWeek()) {
                 if( expirationTime.timeIntervalSinceNow > 0 && surveyTime.timeIntervalSinceNow < 0){
-                    //print("present survey, expiration time:\(expirationTime), survey time:\(surveyTime)")
+                    print("present survey, expiration time:\(expirationTime), survey time:\(surveyTime)")
                     return "present"
                 }
                 else if(expirationTime.timeIntervalSinceNow < 0 ){

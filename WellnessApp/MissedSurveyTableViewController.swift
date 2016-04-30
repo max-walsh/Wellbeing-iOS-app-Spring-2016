@@ -13,6 +13,9 @@ class MissedSurveyTableViewController: UITableViewController {
     
     var surveys = [String]()
     
+ 
+    
+    
     override func viewDidLoad() {
         weak var surveyName: UILabel!
         super.viewDidLoad()
@@ -38,8 +41,8 @@ class MissedSurveyTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("missed survey count: \(surveys.count)")
-        return surveys.count
+        print("missed survey count: \(missedSurveys.count)")
+        return missedSurveys.count
     }
 
     
@@ -47,8 +50,9 @@ class MissedSurveyTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("missedSurveyCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        if let survey = surveys[indexPath.row] as? String {
+        if let survey = missedSurveys[indexPath.row] as? String {
             cell.textLabel!.text = survey
+            //surveyName.text = survey
         }
         return cell
     }

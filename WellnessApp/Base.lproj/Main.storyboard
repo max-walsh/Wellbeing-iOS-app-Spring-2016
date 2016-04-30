@@ -660,6 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6z-Nz-VdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2360" y="4265"/>
         </scene>
         <!--Missed Surveys-->
         <scene sceneID="zGG-XE-jH0">
@@ -676,14 +677,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pdm-1E-OcG" id="T9I-e8-aVb">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw5-xw-lDf">
-                                            <rect key="frame" x="8" y="11" width="343" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -763,12 +756,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irQ-ae-jPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="1421"/>
+            <point key="canvasLocation" x="1691" y="1365"/>
+        </scene>
+        <!--Consent View Controller-->
+        <scene sceneID="11w-xI-ip4">
+            <objects>
+                <viewController storyboardIdentifier="consentform" id="uTL-xf-Q5T" customClass="consentViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pg3-Ri-Fuq"/>
+                        <viewControllerLayoutGuide type="bottom" id="KRS-rq-5ew"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dTe-Ik-Sar">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvl-Jh-Ch9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <string key="text">djfkdsjfksjdf kjfksjf ksjfksjkfjskfjskfj sk kf skjf ksjfksjf ksjfksjfk jskfjskjf ksj fksj fkjs kfjskfj sk fksj fkj kfj dskfj skj fksdj fkjs kfj sdkfj ksdj fksj dfk jsdkfj sdkfj ksdj fksdj fkj sdkfjsdk fksd fksdj fkj sdkf jsdkjf ksdj fksdj fk jsfkj sdkf jskdj fksdjf ks fjfksd jfks jfksj dkfjsk fmngjkhjfns,fmsmnfnjdhf nbsdnfnsdjfskdfksdjfksdjnsdk ksdk jfskf kdsjfksdjfksdfk sdfk jsdkf jsdkfjksdjfk s jfksjfkjsfk jsdkfj sdkjf kdj fklsj fk fj dskfj skdj fksdj kfljsdklfj sdjfksjdf ksj fklj sdfkjskfjskldf jksdjfksjdfksdj fkjsdkjkbvjndfjsdjfbdkfkjjkfkdn fmdnsjfdkfjksdfjksd  sdj kfjsdkfjksljf d fksj fksj kjs kfj ksdfksjf sjfksdjf skdfjskjf </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="28" width="368" height="478"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-wy-Ww8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="166" y="511" width="69" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="acceptConsent:" destination="uTL-xf-Q5T" eventType="touchUpInside" id="IqL-AZ-wYy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Gvl-Jh-Ch9"/>
+                                <exclude reference="aM4-wy-Ww8"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Gvl-Jh-Ch9"/>
+                                <include reference="aM4-wy-Ww8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OH6-p6-yFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2346" y="3006"/>
         </scene>
     </scenes>
     <resources>
         <image name="AudioWave.png" width="50" height="50"/>
-        <image name="Home.png" width="50" height="50"/>
-        <image name="Survey.png" width="50" height="50"/>
+        <image name="Home.png" width="30" height="30"/>
+        <image name="Survey.png" width="30" height="30"/>
     </resources>
 </document>
