@@ -723,17 +723,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-3S-d6c">
-                                <rect key="frame" x="30" y="285" width="49" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="rE4-zn-agV"/>
-                                </constraints>
+                                <rect key="frame" x="226" y="285" width="49" height="30"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="Record:" destination="O3l-zc-AmO" eventType="touchUpInside" id="SB0-JT-c3l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTY-w0-D8P">
-                                <rect key="frame" x="99" y="285" width="30" height="30"/>
+                                <rect key="frame" x="330" y="285" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playSound:" destination="O3l-zc-AmO" eventType="touchUpInside" id="cec-UL-6ZL"/>
@@ -742,10 +739,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BjA-3S-d6c" firstAttribute="centerY" secondItem="ClW-1O-KFw" secondAttribute="centerY" id="00h-HP-nwl"/>
-                            <constraint firstItem="HTY-w0-D8P" firstAttribute="leading" secondItem="BjA-3S-d6c" secondAttribute="trailing" constant="20" id="VJ5-i9-MdH"/>
-                            <constraint firstItem="BjA-3S-d6c" firstAttribute="leading" secondItem="ClW-1O-KFw" secondAttribute="leadingMargin" constant="10" id="oMD-ip-pm3"/>
-                            <constraint firstItem="HTY-w0-D8P" firstAttribute="centerY" secondItem="ClW-1O-KFw" secondAttribute="centerY" id="qST-B7-LgC"/>
+                            <constraint firstItem="HTY-w0-D8P" firstAttribute="centerX" secondItem="ClW-1O-KFw" secondAttribute="centerX" constant="45" id="UrY-Mx-ch4"/>
+                            <constraint firstItem="BjA-3S-d6c" firstAttribute="centerX" secondItem="ClW-1O-KFw" secondAttribute="centerX" constant="-50" id="a5C-TN-zsO"/>
+                            <constraint firstItem="HTY-w0-D8P" firstAttribute="centerY" secondItem="ClW-1O-KFw" secondAttribute="centerY" id="oay-sX-Jhc"/>
+                            <constraint firstItem="BjA-3S-d6c" firstAttribute="centerY" secondItem="ClW-1O-KFw" secondAttribute="centerY" id="zZy-rg-216"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Audio Recording" image="AudioWave.png" id="Crp-Z3-kmO"/>
