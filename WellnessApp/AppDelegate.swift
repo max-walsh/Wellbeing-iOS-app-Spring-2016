@@ -215,7 +215,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             } else{
                 userEmail = email!
-                self.window?.rootViewController = (storyboard.instantiateInitialViewController() as! UINavigationController)
+                //self.window?.rootViewController = (storyboard.instantiateInitialViewController() as! UINavigationController)
+                self.window?.rootViewController = (storyboard.instantiateInitialViewController() as! UITabBarController)
             }
             
         } else{
