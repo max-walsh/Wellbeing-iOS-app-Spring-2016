@@ -294,11 +294,9 @@
 				9559CE4C1ADACC2800DDE65B /* login/homescreen */,
 				950639CB1AEEC9560054E37C /* Survey screen */,
 				9560F16F1AD99EA90085F9EA /* AppDelegate.swift */,
-				F17129091C7147480037407C /* Queue.swift */,
 				F181747D1C68FEB8006431E7 /* TestThread.swift */,
 				9560F1731AD99EA90085F9EA /* Main.storyboard */,
-				F13F1FE91C99099E00FC87AD /* Recording.swift */,
-				F13F1FEB1C990C8C00FC87AD /* RecordingViewController.swift */,
+				F1F44F121CDA55BF0076BA0A /* Audio Recording */,
 				9560F16D1AD99EA90085F9EA /* Supporting Files */,
 			);
 			path = WellnessApp;
@@ -385,11 +383,21 @@
 		F17129021C7117250037407C /* SurveySummary */ = {
 			isa = PBXGroup;
 			children = (
+				F17129091C7147480037407C /* Queue.swift */,
 				F17129051C7119B80037407C /* SurveySummary.swift */,
 				F17129071C71343F0037407C /* SurveySummaryViewController.swift */,
 				F1C373E51C8278E5003E3EAB /* MissedSurveyTableViewController.swift */,
 			);
 			name = SurveySummary;
+			sourceTree = "<group>";
+		};
+		F1F44F121CDA55BF0076BA0A /* Audio Recording */ = {
+			isa = PBXGroup;
+			children = (
+				F13F1FE91C99099E00FC87AD /* Recording.swift */,
+				F13F1FEB1C990C8C00FC87AD /* RecordingViewController.swift */,
+			);
+			name = "Audio Recording";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

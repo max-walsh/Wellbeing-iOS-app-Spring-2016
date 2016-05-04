@@ -489,7 +489,7 @@ class homeTableViewController: UITableViewController {
                 }
                 else if (surveyState == "past"){
                     if (survey.completed == false) {
-                        missedSurveys.append(survey.surveyDescriptor)
+                        missedSurveys.append("\(survey.surveyDescriptor): \(survey.surveyTimeNiceFormat)")
                         print("missed a survey: \(survey.surveyDescriptor): \(survey.surveyExpirationTimeNiceFormat)")
                     } else {
                         print("not missed: \(survey.surveyDescriptor)")

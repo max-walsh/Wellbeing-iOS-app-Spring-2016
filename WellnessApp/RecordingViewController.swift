@@ -58,6 +58,7 @@ class RecordingViewController: UIViewController, AVAudioPlayerDelegate, AVAudioR
     }
     
     func getFileURL() -> NSURL {
+        // https://www.youtube.com/watch?v=4qj1piMAPE0
         var fileSize:UInt64 = 0
         //print("a")
         let path = getCacheDirectory().stringByAppendingString(fileName)
